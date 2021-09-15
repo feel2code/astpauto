@@ -5,10 +5,8 @@ from selenium.webdriver.common.keys import Keys
 import time
 import pyperclip
 from tkinter import *
-#sosoosoыы
-#sssdds
-#rz=input("Введите номер РЗ: ")
-#snils=input("Введите СНИЛС: ")
+
+
 driver = webdriver.Firefox(executable_path='/Users/felixmac/PycharmProjects/pythonProject/geckodriver')
 driver.get('http://astp/maximo/')
 s_username = driver.find_element_by_name("username")
@@ -92,8 +90,6 @@ def clicked():
     driver.find_element_by_id('m9e96a86b-tb').click()
     driver.find_element_by_id('m9e96a86b-tb').send_keys('25. \ 25.2. \ 25.2.2.')
     driver.find_element_by_id('m1317c3f5-pb').click()
-    # 9508331
-    # 82376888960
     #driver.quit()
     #txt.delete(1)
     #txt1.delete(1)
