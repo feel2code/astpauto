@@ -5,7 +5,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 import pyperclip
 from tkinter import *
-#sosooso
+#sosoosoыы
 #sssdds
 #rz=input("Введите номер РЗ: ")
 #snils=input("Введите СНИЛС: ")
