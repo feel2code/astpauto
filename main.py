@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -7,6 +7,8 @@ import pyperclip
 import tkinter as tk
 from tkinter import *
 from tkinter import scrolledtext
+
+
 # кнопка для скриптов да
 def clicked():
     rz = txt.get()
@@ -39,7 +41,8 @@ def clicked():
     a26 = "select i.cinf_snils as $$$_CHANGE_REQ$_6388_8758208, msk.change_requisites.dcr_id, msk.change_requisites.dcr_rs, msk.change_requisites.dcr_bank, msk.change_requisites.dcr_bik, msk.change_requisites.dcr_inn, msk.change_requisites.dcr_kpp, msk.change_requisites.dcr_ks, msk.change_requisites.dcr_fio, msk.change_requisites.cib_id, msk.change_requisites.refund_pay_id, msk.change_requisites.transfer_pay_id, msk.change_requisites.dcr_kbk, msk.change_requisites.dcr_oktmo from msk.portfolio as p inner join msk.oper_history as o on p.oph_id = o.oph_id inner join msk.citizen as c on o.cit_id = c.cit_id inner join msk.citizen_info as i on c.cinf_id = i.per_id inner join msk.doc as d on p.pf_id = d.pf_id inner join msk.payment on d.doc_id = msk.payment.doc_id inner join msk.receiver on msk.payment.rec_id = msk.receiver.rec_id inner join msk.change_requisites on msk.receiver.rec_id = msk.change_requisites.rec_id where (i.cinf_snils = " + snils + ");"
     a27 = "SELECT i.CINF_SNILS AS $$$_CHANGE_REQ1_6388_8758208, MSK.CHANGE_REQUISITES.DCR_ID, MSK.CHANGE_REQUISITES.DCR_RS, MSK.CHANGE_REQUISITES.DCR_BANK, MSK.CHANGE_REQUISITES.DCR_BIK,  MSK.CHANGE_REQUISITES.DCR_INN, MSK.CHANGE_REQUISITES.DCR_KPP, MSK.CHANGE_REQUISITES.DCR_KS, MSK.CHANGE_REQUISITES.DCR_FIO, MSK.CHANGE_REQUISITES.CIB_ID,  MSK.CHANGE_REQUISITES.REFUND_PAY_ID, MSK.CHANGE_REQUISITES.TRANSFER_PAY_ID, MSK.CHANGE_REQUISITES.DCR_KBK, MSK.CHANGE_REQUISITES.DCR_OKTMO, MSK.CHANGE_REQUISITES.REC_ID FROM MSK.PORTFOLIO AS p INNER JOIN MSK.OPER_HISTORY AS o ON p.OPH_ID = o.OPH_ID INNER JOIN MSK.CITIZEN AS c ON o.CIT_ID = c.CIT_ID INNER JOIN MSK.CITIZEN_INFO AS i ON c.CINF_ID = i.PER_ID INNER JOIN MSK.DOC AS d ON p.PF_ID = d.PF_ID INNER JOIN MSK.CHANGE_REQUISITES ON d.DOC_ID = MSK.CHANGE_REQUISITES.DCR_ID WHERE        (i.CINF_SNILS = " + snils + ");"
     a28 = "SELECT i.CINF_SNILS AS $$$_PAYM_SUM_P__6388_8758208, MSK.PAYMENT_SUMMARY.PSU_ID, MSK.PAYMENT_SUMMARY_DOC.DOC_ID AS P_S_D_DOC_ID, d.DOC_DATE, MSK.PAYMENT_SUMMARY_DOC.CPSE_ID AS P_S_D_CPSE_ID,  MSK.PAYMENT_SUMMARY.PSU_PARENT_ID, MSK.PAYMENT_SUMMARY.COU_CODE, MSK.PAYMENT_SUMMARY.PSU_APPROVE_DATE, MSK.PAYMENT_SUMMARY.PSU_CREATE_DATE,  MSK.PAYMENT_SUMMARY.PSU_SUM, MSK.PAYMENT_SUMMARY.CST_ID, MSK.PAYMENT_SUMMARY.PSU_IS_APPROVE, MSK.PAYMENT_SUMMARY.PSU_SUMMARY_DATE, MSK.PAYMENT_SUMMARY.PSU_COUNT,  MSK.PAYMENT_SUMMARY.EXPD_ID, MSK.PAYMENT_SUMMARY.PSU_FROM_DATE, MSK.PAYMENT_SUMMARY.APPROVE_USER_ID, MSK.PAYMENT_SUMMARY.REG_APPROVE_U_ID,  MSK.PAYMENT_SUMMARY.CREATE_USER_ID, MSK.PAYMENT_SUMMARY.PSU_COU_CODE, MSK.PAYMENT_SUMMARY.PSU_COU_NAME, MSK.PAYMENT_SUMMARY.COU_IS_CHANGED,  MSK.PAYMENT_SUMMARY.PSU_SPU_SEND_DATE, MSK.PAYMENT_SUMMARY.PSU_SPU_SEND_USER_ID FROM MSK.PORTFOLIO AS p INNER JOIN MSK.OPER_HISTORY AS o ON p.OPH_ID = o.OPH_ID INNER JOIN MSK.CITIZEN AS c ON o.CIT_ID = c.CIT_ID INNER JOIN MSK.CITIZEN_INFO AS i ON c.CINF_ID = i.PER_ID INNER JOIN MSK.DOC AS d ON p.PF_ID = d.PF_ID INNER JOIN MSK.PAYMENT_SUMMARY_DOC ON d.DOC_ID = MSK.PAYMENT_SUMMARY_DOC.DOC_ID INNER JOIN MSK.PAYMENT_SUMMARY ON MSK.PAYMENT_SUMMARY_DOC.PSU_ID = MSK.PAYMENT_SUMMARY.PSU_ID WHERE        (i.CINF_SNILS = " + snils + ") ORDER BY d.DOC_DATE;"
-    script = (a1 + " " + a2 + " " + a3 + " " + a4 + " " + a5 + " " + a6 + " " + a7 + " " + a8 + " " + a9 + " " + a10 + " " + a11 + " " + a12 + " " + a13 + " " + a14 + " " + a15 + " " + a16 + " " + a17 + " " + a18 + " " + a19 + " " + a20 + " " + a21 + " " + a22 + " " + a23 + " " + a24 + " " + a25 + " " + a26 + " " + a27 + " " + a28)
+    script = (
+                a1 + " " + a2 + " " + a3 + " " + a4 + " " + a5 + " " + a6 + " " + a7 + " " + a8 + " " + a9 + " " + a10 + " " + a11 + " " + a12 + " " + a13 + " " + a14 + " " + a15 + " " + a16 + " " + a17 + " " + a18 + " " + a19 + " " + a20 + " " + a21 + " " + a22 + " " + a23 + " " + a24 + " " + a25 + " " + a26 + " " + a27 + " " + a28)
     pyperclip.copy(script)
     driver = webdriver.Firefox(executable_path='/Users/felixmac/PycharmProjects/pythonProject/geckodriver')
     driver.get('http://astp/maximo/')
@@ -78,6 +81,8 @@ def clicked():
     while i < 35:
         txt.delete(0)
         i += 1
+
+
 # кнопка для выборки
 def clickedvib():
     rz = txt.get()
@@ -120,6 +125,8 @@ def clickedvib():
     while i < 35:
         txt.delete(0)
         i += 1
+
+
 # кнопка ручного селекта
 def clickedmanual():
     rz = txt.get()
@@ -162,6 +169,8 @@ def clickedmanual():
     while i < 35:
         txt.delete(0)
         i += 1
+
+
 # кнопка апдейта
 def clickedupdate():
     rz = txt.get()
@@ -204,23 +213,32 @@ def clickedupdate():
     while i < 35:
         txt.delete(0)
         i += 1
+
+
 # настройка окна
 window = Tk()
+top = Frame(window)
+bottom = Frame(window)
 window.title('Выгрузка данных по СНИЛСУ в АСТП')
-window.geometry('500x300')
-# настройка интерфейса
-lbl = Label(window, text="РЗ")
-lbl.grid(column=2, row=0)
-txt = Entry(window, width=10)
-txt.grid(column=1, row=0)
-btn = Button(window, text="Скрипты", command=clicked)
-btn.grid(column=1, row=2)
-btn1 = Button(window, text="Выборка", command=clickedvib)
-btn1.grid(column=2, row=2)
-txt2 = scrolledtext.ScrolledText(window, width=40, height=10)
-txt2.grid(column=1, row=3)
-btn2 = Button(window, text="Ручной селект", command=clickedmanual)
-btn2.grid(column=1, row=4)
-btn3 = Button(window, text="Ручной апдейт", command=clickedupdate)
-btn3.grid(column=2, row=4)
+window.geometry('550x300')
+txt = Entry(top, width=19)
+#txt.grid(column=0, row=0, sticky=W)
+txt2 = scrolledtext.ScrolledText(bottom, width=70, height=20)
+#txt2.grid(column=0, row=1)
+btn1 = Button(top, text="Выборка", command=clickedvib)
+#btn1.grid(column=1, row=0, sticky=W, pady=5)
+btn = Button(top, text="Скрипты", command=clicked)
+#btn.grid(column=2, row=0,  sticky=W, pady=5)
+btn2 = Button(top, text="Ручной селект", command=clickedmanual)
+#btn2.grid(column=3, row=0,  sticky=W, pady=5)
+btn3 = Button(top, text="Ручной апдейт", command=clickedupdate)
+#btn3.grid(column=4, row=0, sticky=W, pady=5)
+top.pack()
+bottom.pack()
+txt.pack(side=LEFT)
+btn1.pack(side=LEFT)
+btn.pack(side=LEFT)
+btn2.pack(side=LEFT)
+btn3.pack(side=LEFT)
+txt2.pack(side=LEFT)
 window.mainloop()
