@@ -6,16 +6,8 @@ import time
 import pyperclip
 from tkinter import *
 
-
-driver = webdriver.Firefox(executable_path='/Users/felixmac/PycharmProjects/pythonProject/geckodriver')
-driver.get('http://astp/maximo/')
-s_username = driver.find_element_by_name("username")
-s_password = driver.find_element_by_name('password')
-s_username.send_keys("ivanovaeln")
-s_password.send_keys("Eivan9073-")
-driver.find_element_by_class_name('tiv_btn').click()
-
 def clicked():
+
     rz=txt.get()
     snils=txt1.get()
     a1 = " select  (select sc.cit_snils from msk.citizen as sc inner join msk.oper_history as so on sc.cit_id = so.cit_id inner join msk.portfolio as sp on so.oph_id = sp.oph_id inner join msk.doc as sd on sp.pf_id = sd.pf_id  where (sd.doc_id = d.doc_id)) as $$$_CLASSIC_$4_6388_8758208, d.doc_id, cdt.cdt_id, cdt.cdt_name, d.doc_incoming_num, d.doc_date, d.doc_is_actual, d.cou_code, d.pf_id, p.ccs_id, p.cou_code as expr1, de.dec_date,  de.dec_is_approve, de.dec_is_actual, de.dec_sum, de.app_id, cds.cds_name, a.app_sum, e.expt_short_name, d.doc_rec_date from msk.doc as d inner join msk.cls_doc_type as cdt on d.cdt_id = cdt.cdt_id inner join msk.portfolio as p on d.pf_id = p.pf_id left outer join msk.decision as de on de.doc_id = d.doc_id left outer join msk.cls_decision_status as cds on de.cds_id = cds.cds_id left outer join msk.application as a on d.doc_id = a.doc_id left outer join  msk.cls_expense_type as e on e.expt_id = a.expt_id where (d.pf_id in  (select p.pf_id from msk.portfolio as p inner join msk.oper_history as oh on p.oph_id = oh.oph_id inner join msk.citizen as c on oh.cit_id = c.cit_id where (c.cit_snils in (" + snils + ")))) and (((d.cdt_id < 92 or d.cdt_id > 288 or d.cdt_id in (97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 236, 237, 238, 254, 255, 258)) and d.cdt_id<1000) or ((d.cdt_id < 1092 or d.cdt_id > 1288 or d.cdt_id in (1097, 1098, 1099, 1100, 1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1236, 1237, 1238, 1254, 1255, 1258)) and d.cdt_id>1000)) order by $$$_CLASSIC_$4_6388_8758208, d.doc_date, d.doc_id;"
@@ -67,6 +59,14 @@ def clicked():
     a28 = "SELECT         i.CINF_SNILS AS $$$_PAYM_SUM_P__6388_8758208, MSK.PAYMENT_SUMMARY.PSU_ID, MSK.PAYMENT_SUMMARY_DOC.DOC_ID AS P_S_D_DOC_ID, d.DOC_DATE, MSK.PAYMENT_SUMMARY_DOC.CPSE_ID AS P_S_D_CPSE_ID,  MSK.PAYMENT_SUMMARY.PSU_PARENT_ID, MSK.PAYMENT_SUMMARY.COU_CODE, MSK.PAYMENT_SUMMARY.PSU_APPROVE_DATE, MSK.PAYMENT_SUMMARY.PSU_CREATE_DATE,  MSK.PAYMENT_SUMMARY.PSU_SUM, MSK.PAYMENT_SUMMARY.CST_ID, MSK.PAYMENT_SUMMARY.PSU_IS_APPROVE, MSK.PAYMENT_SUMMARY.PSU_SUMMARY_DATE, MSK.PAYMENT_SUMMARY.PSU_COUNT,  MSK.PAYMENT_SUMMARY.EXPD_ID, MSK.PAYMENT_SUMMARY.PSU_FROM_DATE, MSK.PAYMENT_SUMMARY.APPROVE_USER_ID, MSK.PAYMENT_SUMMARY.REG_APPROVE_U_ID,  MSK.PAYMENT_SUMMARY.CREATE_USER_ID, MSK.PAYMENT_SUMMARY.PSU_COU_CODE, MSK.PAYMENT_SUMMARY.PSU_COU_NAME, MSK.PAYMENT_SUMMARY.COU_IS_CHANGED,  MSK.PAYMENT_SUMMARY.PSU_SPU_SEND_DATE, MSK.PAYMENT_SUMMARY.PSU_SPU_SEND_USER_ID FROM            MSK.PORTFOLIO AS p INNER JOIN MSK.OPER_HISTORY AS o ON p.OPH_ID = o.OPH_ID INNER JOIN MSK.CITIZEN AS c ON o.CIT_ID = c.CIT_ID INNER JOIN MSK.CITIZEN_INFO AS i ON c.CINF_ID = i.PER_ID INNER JOIN MSK.DOC AS d ON p.PF_ID = d.PF_ID INNER JOIN MSK.PAYMENT_SUMMARY_DOC ON d.DOC_ID = MSK.PAYMENT_SUMMARY_DOC.DOC_ID INNER JOIN MSK.PAYMENT_SUMMARY ON MSK.PAYMENT_SUMMARY_DOC.PSU_ID = MSK.PAYMENT_SUMMARY.PSU_ID WHERE        (i.CINF_SNILS = " + snils + ") ORDER BY d.DOC_DATE;"
     script = (a1 + " " + a2 + " " + a3 + " " + a4 + " " + a5 + " " + a6 + " " + a7 + " " + a8 + " " + a9 + " " + a10 + " " + a11 + " " + a12 + " " + a13 + " " + a14 + " " + a15 + " " + a16 + " " + a17 + " " + a18 + " " + a19 + " " + a20 + " " + a21 + " " + a22 + " " + a23 + " " + a24 + " " + a25 + " " + a26 + " " + a27 + " " + a28)
     pyperclip.copy(script)
+    driver = webdriver.Firefox(executable_path='/Users/felixmac/PycharmProjects/pythonProject/geckodriver')
+    driver.get('http://astp/maximo/')
+    s_username = driver.find_element_by_name("username")
+    s_password = driver.find_element_by_name('password')
+    s_username.send_keys("ivanovaeln")
+    s_password.send_keys("Eivan9073-")
+    driver.find_element_by_class_name('tiv_btn').click()
+    time.sleep(1)
     driver.find_element_by_class_name('homebutton').click()
     time.sleep(3)
     driver.find_element_by_id('m1e20cba1-sct_42772').click()
@@ -90,9 +90,34 @@ def clicked():
     driver.find_element_by_id('m9e96a86b-tb').click()
     driver.find_element_by_id('m9e96a86b-tb').send_keys('25. \ 25.2. \ 25.2.2.')
     driver.find_element_by_id('m1317c3f5-pb').click()
-    #driver.quit()
-    #txt.delete(1)
-    #txt1.delete(1)
+    time.sleep(90)
+    driver.find_element_by_id('m15f1c9f0-pb').click()
+    driver.quit()
+
+    txt.delete(0)
+    txt.delete(0)
+    txt.delete(0)
+    txt.delete(0)
+    txt.delete(0)
+    txt.delete(0)
+    txt.delete(0)
+    txt.delete(0)
+    txt.delete(0)
+    txt.delete(0)
+    txt.delete(0)
+
+    txt1.delete(0)
+    txt1.delete(0)
+    txt1.delete(0)
+    txt1.delete(0)
+    txt1.delete(0)
+    txt1.delete(0)
+    txt1.delete(0)
+    txt1.delete(0)
+    txt1.delete(0)
+    txt1.delete(0)
+    txt1.delete(0)
+
 
 window = Tk()
 window.title('Выгрузка данных по СНИЛСУ в АСТП')
