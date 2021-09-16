@@ -213,8 +213,6 @@ def clickedupdate():
     while i < 35:
         txt.delete(0)
         i += 1
-
-
 # настройка окна
 window = Tk()
 top = Frame(window)
@@ -222,17 +220,11 @@ bottom = Frame(window)
 window.title('Выгрузка данных по СНИЛСУ в АСТП')
 window.geometry('550x300')
 txt = Entry(top, width=19)
-#txt.grid(column=0, row=0, sticky=W)
 txt2 = scrolledtext.ScrolledText(bottom, width=70, height=20)
-#txt2.grid(column=0, row=1)
 btn1 = Button(top, text="Выборка", command=clickedvib)
-#btn1.grid(column=1, row=0, sticky=W, pady=5)
 btn = Button(top, text="Скрипты", command=clicked)
-#btn.grid(column=2, row=0,  sticky=W, pady=5)
 btn2 = Button(top, text="Ручной селект", command=clickedmanual)
-#btn2.grid(column=3, row=0,  sticky=W, pady=5)
 btn3 = Button(top, text="Ручной апдейт", command=clickedupdate)
-#btn3.grid(column=4, row=0, sticky=W, pady=5)
 top.pack()
 bottom.pack()
 txt.pack(side=LEFT)
