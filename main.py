@@ -7,7 +7,7 @@ import pyperclip
 import tkinter as tk
 from tkinter import *
 from tkinter import scrolledtext
-# кнопка для скриптов
+# кнопка для скриптов да
 def clicked():
     rz = txt.get()
     snils = txt2.get('1.0', '1.11')
