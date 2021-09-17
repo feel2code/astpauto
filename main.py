@@ -80,8 +80,6 @@ def clicked():
     while i < 35:
         txt.delete(0)
         i += 1
-
-
 # кнопка для выборки
 def clickedvib():
     rz = txt.get()
@@ -125,8 +123,6 @@ def clickedvib():
     while i < 35:
         txt.delete(0)
         i += 1
-
-
 # кнопка ручного селекта
 def clickedmanual():
     rz = txt.get()
@@ -170,8 +166,6 @@ def clickedmanual():
     while i < 35:
         txt.delete(0)
         i += 1
-
-
 # кнопка апдейта
 def clickedupdate():
     rz = txt.get()
