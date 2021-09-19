@@ -2,14 +2,93 @@
 # -*- coding: utf-8 -*-
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-import time
 import pyperclip
 import tkinter as tk
 from tkinter import *
 from tkinter import scrolledtext
-# кнопка для скриптов да
-def clicked():
+import time
+# вход в астп
+driver = webdriver.Firefox(executable_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/geckodriver',
+                           service_log_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/driver.log')
+driver.get('http://astp/maximo/')
+s_username = driver.find_element_by_name("username")
+s_password = driver.find_element_by_name('password')
+s_username.send_keys("ivanovaeln")
+s_password.send_keys("Eivan9073-")
+status = False
+while not status:
+    try:
+        driver.find_element_by_class_name('tiv_btn').is_displayed()
+    except:
+        status = False
+    else:
+        status = True
+        driver.find_element_by_class_name('tiv_btn').click()
+# метод геко
+def gecko():
     rz = txt.get()
+    status = False
+    while not status:
+        try:
+            driver.find_element_by_class_name('homebutton').is_displayed()
+        except:
+            status = False
+        else:
+            status = True
+            driver.find_element_by_class_name('homebutton').click()
+    status = False
+    while not status:
+        try:
+            driver.find_element_by_id('m1e20cba1-sct_42772').is_displayed()
+        except:
+            status = False
+        else:
+            status = True
+            driver.find_element_by_id('m1e20cba1-sct_42772').click()
+    status = False
+    while not status:
+        try:
+            driver.find_element_by_id('me148583e-hb_header_10').is_displayed()
+        except:
+            status = False
+        else:
+            status = True
+            driver.find_element_by_id('me148583e-hb_header_10').click()
+    status = False
+    while not status:
+        try:
+            driver.find_element_by_id('quicksearch').is_displayed()
+        except:
+            status = False
+        else:
+            status = True
+            driver.find_element_by_id('quicksearch').click()
+            driver.find_element_by_id('quicksearch').send_keys(rz)
+            driver.find_element_by_id('quicksearch').send_keys(Keys.RETURN)
+    status = False
+    while not status:
+        try:
+            driver.find_element_by_id('m3b854f9f-sc_div').is_displayed()
+        except:
+            status = False
+        else:
+            status = True
+            # создаем ДРЗ
+            time.sleep(2)
+            driver.find_element_by_id('m3b854f9f-sc_div').click()
+    status = False
+    while not status:
+        try:
+            driver.find_element_by_id('ma7efa7a3-tb').is_displayed()
+        except:
+            status = False
+        else:
+            status = True
+            # Вводим данные по задаче
+            time.sleep(2)
+            driver.find_element_by_id('ma7efa7a3-tb').click()
+# кнопка для скриптов
+def clicked():
     snils = txt2.get('1.0', '1.11')
     a1 = " select (select sc.cit_snils from msk.citizen as sc inner join msk.oper_history as so on sc.cit_id = so.cit_id inner join msk.portfolio as sp on so.oph_id = sp.oph_id inner join msk.doc as sd on sp.pf_id = sd.pf_id  where (sd.doc_id = d.doc_id)) as $$$_CLASSIC_$4_6388_8758208, d.doc_id, cdt.cdt_id, cdt.cdt_name, d.doc_incoming_num, d.doc_date, d.doc_is_actual, d.cou_code, d.pf_id, p.ccs_id, p.cou_code as expr1, de.dec_date,  de.dec_is_approve, de.dec_is_actual, de.dec_sum, de.app_id, cds.cds_name, a.app_sum, e.expt_short_name, d.doc_rec_date from msk.doc as d inner join msk.cls_doc_type as cdt on d.cdt_id = cdt.cdt_id inner join msk.portfolio as p on d.pf_id = p.pf_id left outer join msk.decision as de on de.doc_id = d.doc_id left outer join msk.cls_decision_status as cds on de.cds_id = cds.cds_id left outer join msk.application as a on d.doc_id = a.doc_id left outer join  msk.cls_expense_type as e on e.expt_id = a.expt_id where (d.pf_id in  (select p.pf_id from msk.portfolio as p inner join msk.oper_history as oh on p.oph_id = oh.oph_id inner join msk.citizen as c on oh.cit_id = c.cit_id where (c.cit_snils in (" + snils + ")))) and (((d.cdt_id < 92 or d.cdt_id > 288 or d.cdt_id in (97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 236, 237, 238, 254, 255, 258)) and d.cdt_id<1000) or ((d.cdt_id < 1092 or d.cdt_id > 1288 or d.cdt_id in (1097, 1098, 1099, 1100, 1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1236, 1237, 1238, 1254, 1255, 1258)) and d.cdt_id>1000)) order by $$$_CLASSIC_$4_6388_8758208, d.doc_date, d.doc_id;"
     a2 = "select msk.citizen_info.cinf_snils as $$$_APPLICATION_6388_8758208, a.* from msk.application as a inner join  msk.citizen_info on a.cinf_id = msk.citizen_info.per_id where (msk.citizen_info.cinf_snils = " + snils + ") and (a.doc_id is not null);"
@@ -39,31 +118,9 @@ def clicked():
     a26 = "select i.cinf_snils as $$$_CHANGE_REQ$_6388_8758208, msk.change_requisites.dcr_id, msk.change_requisites.dcr_rs, msk.change_requisites.dcr_bank, msk.change_requisites.dcr_bik, msk.change_requisites.dcr_inn, msk.change_requisites.dcr_kpp, msk.change_requisites.dcr_ks, msk.change_requisites.dcr_fio, msk.change_requisites.cib_id, msk.change_requisites.refund_pay_id, msk.change_requisites.transfer_pay_id, msk.change_requisites.dcr_kbk, msk.change_requisites.dcr_oktmo from msk.portfolio as p inner join msk.oper_history as o on p.oph_id = o.oph_id inner join msk.citizen as c on o.cit_id = c.cit_id inner join msk.citizen_info as i on c.cinf_id = i.per_id inner join msk.doc as d on p.pf_id = d.pf_id inner join msk.payment on d.doc_id = msk.payment.doc_id inner join msk.receiver on msk.payment.rec_id = msk.receiver.rec_id inner join msk.change_requisites on msk.receiver.rec_id = msk.change_requisites.rec_id where (i.cinf_snils = " + snils + ");"
     a27 = "SELECT i.CINF_SNILS AS $$$_CHANGE_REQ1_6388_8758208, MSK.CHANGE_REQUISITES.DCR_ID, MSK.CHANGE_REQUISITES.DCR_RS, MSK.CHANGE_REQUISITES.DCR_BANK, MSK.CHANGE_REQUISITES.DCR_BIK,  MSK.CHANGE_REQUISITES.DCR_INN, MSK.CHANGE_REQUISITES.DCR_KPP, MSK.CHANGE_REQUISITES.DCR_KS, MSK.CHANGE_REQUISITES.DCR_FIO, MSK.CHANGE_REQUISITES.CIB_ID,  MSK.CHANGE_REQUISITES.REFUND_PAY_ID, MSK.CHANGE_REQUISITES.TRANSFER_PAY_ID, MSK.CHANGE_REQUISITES.DCR_KBK, MSK.CHANGE_REQUISITES.DCR_OKTMO, MSK.CHANGE_REQUISITES.REC_ID FROM MSK.PORTFOLIO AS p INNER JOIN MSK.OPER_HISTORY AS o ON p.OPH_ID = o.OPH_ID INNER JOIN MSK.CITIZEN AS c ON o.CIT_ID = c.CIT_ID INNER JOIN MSK.CITIZEN_INFO AS i ON c.CINF_ID = i.PER_ID INNER JOIN MSK.DOC AS d ON p.PF_ID = d.PF_ID INNER JOIN MSK.CHANGE_REQUISITES ON d.DOC_ID = MSK.CHANGE_REQUISITES.DCR_ID WHERE        (i.CINF_SNILS = " + snils + ");"
     a28 = "SELECT i.CINF_SNILS AS $$$_PAYM_SUM_P__6388_8758208, MSK.PAYMENT_SUMMARY.PSU_ID, MSK.PAYMENT_SUMMARY_DOC.DOC_ID AS P_S_D_DOC_ID, d.DOC_DATE, MSK.PAYMENT_SUMMARY_DOC.CPSE_ID AS P_S_D_CPSE_ID,  MSK.PAYMENT_SUMMARY.PSU_PARENT_ID, MSK.PAYMENT_SUMMARY.COU_CODE, MSK.PAYMENT_SUMMARY.PSU_APPROVE_DATE, MSK.PAYMENT_SUMMARY.PSU_CREATE_DATE,  MSK.PAYMENT_SUMMARY.PSU_SUM, MSK.PAYMENT_SUMMARY.CST_ID, MSK.PAYMENT_SUMMARY.PSU_IS_APPROVE, MSK.PAYMENT_SUMMARY.PSU_SUMMARY_DATE, MSK.PAYMENT_SUMMARY.PSU_COUNT,  MSK.PAYMENT_SUMMARY.EXPD_ID, MSK.PAYMENT_SUMMARY.PSU_FROM_DATE, MSK.PAYMENT_SUMMARY.APPROVE_USER_ID, MSK.PAYMENT_SUMMARY.REG_APPROVE_U_ID,  MSK.PAYMENT_SUMMARY.CREATE_USER_ID, MSK.PAYMENT_SUMMARY.PSU_COU_CODE, MSK.PAYMENT_SUMMARY.PSU_COU_NAME, MSK.PAYMENT_SUMMARY.COU_IS_CHANGED,  MSK.PAYMENT_SUMMARY.PSU_SPU_SEND_DATE, MSK.PAYMENT_SUMMARY.PSU_SPU_SEND_USER_ID FROM MSK.PORTFOLIO AS p INNER JOIN MSK.OPER_HISTORY AS o ON p.OPH_ID = o.OPH_ID INNER JOIN MSK.CITIZEN AS c ON o.CIT_ID = c.CIT_ID INNER JOIN MSK.CITIZEN_INFO AS i ON c.CINF_ID = i.PER_ID INNER JOIN MSK.DOC AS d ON p.PF_ID = d.PF_ID INNER JOIN MSK.PAYMENT_SUMMARY_DOC ON d.DOC_ID = MSK.PAYMENT_SUMMARY_DOC.DOC_ID INNER JOIN MSK.PAYMENT_SUMMARY ON MSK.PAYMENT_SUMMARY_DOC.PSU_ID = MSK.PAYMENT_SUMMARY.PSU_ID WHERE        (i.CINF_SNILS = " + snils + ") ORDER BY d.DOC_DATE;"
-    script = (
-                a1 + " " + a2 + " " + a3 + " " + a4 + " " + a5 + " " + a6 + " " + a7 + " " + a8 + " " + a9 + " " + a10 + " " + a11 + " " + a12 + " " + a13 + " " + a14 + " " + a15 + " " + a16 + " " + a17 + " " + a18 + " " + a19 + " " + a20 + " " + a21 + " " + a22 + " " + a23 + " " + a24 + " " + a25 + " " + a26 + " " + a27 + " " + a28)
+    script = (a1 + " " + a2 + " " + a3 + " " + a4 + " " + a5 + " " + a6 + " " + a7 + " " + a8 + " " + a9 + " " + a10 + " " + a11 + " " + a12 + " " + a13 + " " + a14 + " " + a15 + " " + a16 + " " + a17 + " " + a18 + " " + a19 + " " + a20 + " " + a21 + " " + a22 + " " + a23 + " " + a24 + " " + a25 + " " + a26 + " " + a27 + " " + a28)
     pyperclip.copy(script)
-    driver = webdriver.Firefox(executable_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/geckodriver',
-                               service_log_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/driver.log')
-    driver.get('http://astp/maximo/')
-    s_username = driver.find_element_by_name("username")
-    s_password = driver.find_element_by_name('password')
-    s_username.send_keys("ivanovaeln")
-    s_password.send_keys("Eivan9073-")
-    driver.find_element_by_class_name('tiv_btn').click()
-    time.sleep(1)
-    driver.find_element_by_class_name('homebutton').click()
-    time.sleep(3)
-    driver.find_element_by_id('m1e20cba1-sct_42772').click()
-    time.sleep(2)
-    driver.find_element_by_id('me148583e-hb_header_10').click()
-    time.sleep(12)
-    driver.find_element_by_id('quicksearch').click()
-    driver.find_element_by_id('quicksearch').send_keys(rz)
-    driver.find_element_by_id('quicksearch').send_keys(Keys.RETURN)
-    time.sleep(8)
-    driver.find_element_by_id('m3b854f9f-sc_div').click()
-    time.sleep(8)
-    driver.find_element_by_id('ma7efa7a3-tb').click()
+    gecko()
     driver.find_element_by_id('ma7efa7a3-tb').send_keys('Выполнить селект')
     driver.find_element_by_id('m6bda82c1-ta').click()
     driver.find_element_by_id('m6bda82c1-ta').send_keys(Keys.COMMAND + "a")
@@ -72,9 +129,16 @@ def clicked():
     driver.find_element_by_id('m9e96a86b-tb').click()
     driver.find_element_by_id('m9e96a86b-tb').send_keys('25. \ 25.2. \ 25.2.2.')
     driver.find_element_by_id('m1317c3f5-pb').click()
-    time.sleep(90)
-    driver.find_element_by_id('m15f1c9f0-pb').click()
-    driver.quit()
+    status = False
+    while not status:
+        try:
+            driver.find_element_by_id('m15f1c9f0-pb').is_displayed()
+        except:
+            status = False
+        else:
+            status = True
+            time.sleep(2)
+            driver.find_element_by_id('m15f1c9f0-pb').click()
     txt2.delete('1.0', tk.END)
     i = 0
     while i < 35:
@@ -82,31 +146,9 @@ def clicked():
         i += 1
 # кнопка для выборки
 def clickedvib():
-    rz = txt.get()
     script = txt2.get('1.0', tk.END)
     pyperclip.copy(script)
-    driver = webdriver.Firefox(executable_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/geckodriver',
-                               service_log_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/driver.log')
-    driver.get('http://astp/maximo/')
-    s_username = driver.find_element_by_name("username")
-    s_password = driver.find_element_by_name('password')
-    s_username.send_keys("ivanovaeln")
-    s_password.send_keys("Eivan9073-")
-    driver.find_element_by_class_name('tiv_btn').click()
-    time.sleep(1)
-    driver.find_element_by_class_name('homebutton').click()
-    time.sleep(3)
-    driver.find_element_by_id('m1e20cba1-sct_42772').click()
-    time.sleep(2)
-    driver.find_element_by_id('me148583e-hb_header_10').click()
-    time.sleep(12)
-    driver.find_element_by_id('quicksearch').click()
-    driver.find_element_by_id('quicksearch').send_keys(rz)
-    driver.find_element_by_id('quicksearch').send_keys(Keys.RETURN)
-    time.sleep(8)
-    driver.find_element_by_id('m3b854f9f-sc_div').click()
-    time.sleep(8)
-    driver.find_element_by_id('ma7efa7a3-tb').click()
+    gecko()
     driver.find_element_by_id('ma7efa7a3-tb').send_keys('Приложить выборку')
     driver.find_element_by_id('m6bda82c1-ta').click()
     driver.find_element_by_id('m6bda82c1-ta').send_keys(Keys.COMMAND + "a")
@@ -115,9 +157,16 @@ def clickedvib():
     driver.find_element_by_id('m9e96a86b-tb').click()
     driver.find_element_by_id('m9e96a86b-tb').send_keys('25. \ 25.2. \ 25.2.2.')
     driver.find_element_by_id('m1317c3f5-pb').click()
-    time.sleep(90)
-    driver.find_element_by_id('m15f1c9f0-pb').click()
-    driver.quit()
+    status = False
+    while not status:
+        try:
+            driver.find_element_by_id('m15f1c9f0-pb').is_displayed()
+        except:
+            status = False
+        else:
+            status = True
+            time.sleep(2)
+            driver.find_element_by_id('m15f1c9f0-pb').click()
     txt2.delete('1.0', tk.END)
     i = 0
     while i < 35:
@@ -125,31 +174,9 @@ def clickedvib():
         i += 1
 # кнопка ручного селекта
 def clickedmanual():
-    rz = txt.get()
     script = txt2.get('1.0', tk.END)
     pyperclip.copy(script)
-    driver = webdriver.Firefox(executable_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/geckodriver',
-                               service_log_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/driver.log')
-    driver.get('http://astp/maximo/')
-    s_username = driver.find_element_by_name("username")
-    s_password = driver.find_element_by_name('password')
-    s_username.send_keys("ivanovaeln")
-    s_password.send_keys("Eivan9073-")
-    driver.find_element_by_class_name('tiv_btn').click()
-    time.sleep(1)
-    driver.find_element_by_class_name('homebutton').click()
-    time.sleep(3)
-    driver.find_element_by_id('m1e20cba1-sct_42772').click()
-    time.sleep(2)
-    driver.find_element_by_id('me148583e-hb_header_10').click()
-    time.sleep(12)
-    driver.find_element_by_id('quicksearch').click()
-    driver.find_element_by_id('quicksearch').send_keys(rz)
-    driver.find_element_by_id('quicksearch').send_keys(Keys.RETURN)
-    time.sleep(8)
-    driver.find_element_by_id('m3b854f9f-sc_div').click()
-    time.sleep(8)
-    driver.find_element_by_id('ma7efa7a3-tb').click()
+    gecko()
     driver.find_element_by_id('ma7efa7a3-tb').send_keys('Выполнить селект')
     driver.find_element_by_id('m6bda82c1-ta').click()
     driver.find_element_by_id('m6bda82c1-ta').send_keys(Keys.COMMAND + "a")
@@ -158,9 +185,16 @@ def clickedmanual():
     driver.find_element_by_id('m9e96a86b-tb').click()
     driver.find_element_by_id('m9e96a86b-tb').send_keys('25. \ 25.2. \ 25.2.2.')
     driver.find_element_by_id('m1317c3f5-pb').click()
-    time.sleep(90)
-    driver.find_element_by_id('m15f1c9f0-pb').click()
-    driver.quit()
+    status = False
+    while not status:
+        try:
+            driver.find_element_by_id('m15f1c9f0-pb').is_displayed()
+        except:
+            status = False
+        else:
+            status = True
+            time.sleep(2)
+            driver.find_element_by_id('m15f1c9f0-pb').click()
     txt2.delete('1.0', tk.END)
     i = 0
     while i < 35:
@@ -168,31 +202,9 @@ def clickedmanual():
         i += 1
 # кнопка апдейта
 def clickedupdate():
-    rz = txt.get()
     script = txt2.get('1.0', tk.END)
     pyperclip.copy(script)
-    driver = webdriver.Firefox(executable_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/geckodriver',
-                               service_log_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/driver.log')
-    driver.get('http://astp/maximo/')
-    s_username = driver.find_element_by_name("username")
-    s_password = driver.find_element_by_name('password')
-    s_username.send_keys("ivanovaeln")
-    s_password.send_keys("Eivan9073-")
-    driver.find_element_by_class_name('tiv_btn').click()
-    time.sleep(1)
-    driver.find_element_by_class_name('homebutton').click()
-    time.sleep(3)
-    driver.find_element_by_id('m1e20cba1-sct_42772').click()
-    time.sleep(2)
-    driver.find_element_by_id('me148583e-hb_header_10').click()
-    time.sleep(12)
-    driver.find_element_by_id('quicksearch').click()
-    driver.find_element_by_id('quicksearch').send_keys(rz)
-    driver.find_element_by_id('quicksearch').send_keys(Keys.RETURN)
-    time.sleep(8)
-    driver.find_element_by_id('m3b854f9f-sc_div').click()
-    time.sleep(8)
-    driver.find_element_by_id('ma7efa7a3-tb').click()
+    gecko()
     driver.find_element_by_id('ma7efa7a3-tb').send_keys('Просьба согласовать выполнение скриптов')
     driver.find_element_by_id('m6bda82c1-ta').click()
     driver.find_element_by_id('m6bda82c1-ta').send_keys(Keys.COMMAND + "a")
@@ -201,9 +213,16 @@ def clickedupdate():
     driver.find_element_by_id('m9e96a86b-tb').click()
     driver.find_element_by_id('m9e96a86b-tb').send_keys('25. \ 25.7.')
     driver.find_element_by_id('m1317c3f5-pb').click()
-    time.sleep(90)
-    driver.find_element_by_id('m15f1c9f0-pb').click()
-    driver.quit()
+    status = False
+    while not status:
+        try:
+            driver.find_element_by_id('m15f1c9f0-pb').is_displayed()
+        except:
+            status = False
+        else:
+            status = True
+            time.sleep(2)
+            driver.find_element_by_id('m15f1c9f0-pb').click()
     txt2.delete('1.0', tk.END)
     i = 0
     while i < 35:
