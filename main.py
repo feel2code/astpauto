@@ -62,6 +62,7 @@ def gecko():
             status = False
         else:
             status = True
+            time.sleep(2)
             driver.find_element_by_id('quicksearch').click()
             driver.find_element_by_id('quicksearch').send_keys(rz)
             driver.find_element_by_id('quicksearch').send_keys(Keys.RETURN)
