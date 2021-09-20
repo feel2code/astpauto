@@ -332,3 +332,24 @@ interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431
 webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
 console.log: WebExtensions: reset-default-search: starting.
 console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+1632128560988	Marionette	INFO	Stopped listening on port 65257
+JavaScript error: resource:///modules/Interactions.jsm, line 230: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1632129967913	geckodriver	INFO	Listening on 127.0.0.1:49329
+1632129967938	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/1t/0cgrwk454rl3_dl7m5m4_kxh0000gn/T/rust_mozprofileP4NcQr"
+1632129968898	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1t/0cgrwk454rl3_dl7m5m4_kxh0000gn/T/rust_mozprofileP4NcQr/search.json.mozlz4", (void 0)))
+console.error: BackgroundUpdate: 
+  _reasonsToNotScheduleUpdates: Failed to check for Maintenance Service Registry Key: [Exception... "Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIUpdateProcessor.getServiceRegKeyExists]"  nsresult: "0x80004001 (NS_ERROR_NOT_IMPLEMENTED)"  location: "JS frame :: resource://gre/modules/BackgroundUpdate.jsm :: _reasonsToNotScheduleUpdates :: line 243"  data: no]
+1632129971423	Marionette	INFO	Listening on port 49334
+1632129971482	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://astp/maximo/webclient/login/login.jsp?welcome=true, line 1: TypeError: document.getElementById(...) is null
+1632129985374	Marionette	INFO	Stopped listening on port 49334
+JavaScript error: resource:///modules/Interactions.jsm, line 230: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]

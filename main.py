@@ -6,7 +6,6 @@ import pyperclip
 import tkinter as tk
 from tkinter import *
 from tkinter import scrolledtext
-import time
 # вход в астп
 driver = webdriver.Firefox(executable_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/geckodriver',
                            service_log_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/driver.log')
@@ -18,76 +17,69 @@ s_password.send_keys("Eivan9073-")
 status = False
 while not status:
     try:
-        driver.find_element_by_class_name('tiv_btn').is_displayed()
+        status = driver.find_element_by_class_name('tiv_btn').is_displayed()
     except:
         status = False
-    else:
-        status = True
-        driver.find_element_by_class_name('tiv_btn').click()
+driver.find_element_by_class_name('tiv_btn').click()
 # метод геко
 def gecko():
     rz = txt.get()
     status = False
     while not status:
         try:
-            driver.find_element_by_class_name('homebutton').is_displayed()
+            status = driver.find_element_by_class_name('homebutton').is_displayed()
         except:
             status = False
-        else:
-            status = True
-            driver.find_element_by_class_name('homebutton').click()
+    driver.find_element_by_class_name('homebutton').click()
     status = False
     while not status:
         try:
-            driver.find_element_by_id('m1e20cba1-sct_42772').is_displayed()
+            status = driver.find_element_by_id('m1e20cba1-sct_42772').is_displayed()
         except:
             status = False
-        else:
-            status = True
-            driver.find_element_by_id('m1e20cba1-sct_42772').click()
+    driver.find_element_by_id('m1e20cba1-sct_42772').click()
     status = False
     while not status:
         try:
-            driver.find_element_by_id('me148583e-hb_header_10').is_displayed()
+            status = driver.find_element_by_id('me148583e-hb_header_10').is_displayed()
         except:
             status = False
-        else:
-            status = True
-            driver.find_element_by_id('me148583e-hb_header_10').click()
+    driver.find_element_by_id('me148583e-hb_header_10').click()
     status = False
     while not status:
         try:
-            driver.find_element_by_id('quicksearch').is_displayed()
+            status = driver.find_element_by_id('quicksearch').is_displayed()
         except:
             status = False
-        else:
-            status = True
-            time.sleep(2)
-            driver.find_element_by_id('quicksearch').click()
-            driver.find_element_by_id('quicksearch').send_keys(rz)
-            driver.find_element_by_id('quicksearch').send_keys(Keys.RETURN)
+    driver.find_element_by_id('quicksearch').click()
+    driver.find_element_by_id('quicksearch').send_keys(rz)
+    driver.find_element_by_id('quicksearch').send_keys(Keys.RETURN)
     status = False
     while not status:
         try:
-            driver.find_element_by_id('m3b854f9f-sc_div').is_displayed()
+            status = driver.find_element_by_id('m3b854f9f-sc_div').is_displayed()
         except:
             status = False
-        else:
-            status = True
-            # создаем ДРЗ
-            time.sleep(2)
-            driver.find_element_by_id('m3b854f9f-sc_div').click()
+    # создаем ДРЗ
+    driver.find_element_by_id('m3b854f9f-sc_div').click()
     status = False
     while not status:
         try:
-            driver.find_element_by_id('ma7efa7a3-tb').is_displayed()
+            status = driver.find_element_by_id('ma7efa7a3-tb').is_displayed()
         except:
             status = False
-        else:
-            status = True
-            # Вводим данные по задаче
-            time.sleep(2)
-            driver.find_element_by_id('ma7efa7a3-tb').click()
+    # Вводим данные по задаче
+    driver.find_element_by_id('ma7efa7a3-tb').click()
+
+# закрыть после создания ДРЗ
+def zakrit():
+    status = False
+    while not status:
+        try:
+            status = driver.find_element_by_id('m15f1c9f0-pb').is_displayed()
+        except:
+            status = False
+    driver.find_element_by_id('m15f1c9f0-pb').click()
 # кнопка для скриптов
 def clicked():
     snils = txt2.get('1.0', '1.11')
@@ -130,16 +122,7 @@ def clicked():
     driver.find_element_by_id('m9e96a86b-tb').click()
     driver.find_element_by_id('m9e96a86b-tb').send_keys('25. \ 25.2. \ 25.2.2.')
     driver.find_element_by_id('m1317c3f5-pb').click()
-    status = False
-    while not status:
-        try:
-            driver.find_element_by_id('m15f1c9f0-pb').is_displayed()
-        except:
-            status = False
-        else:
-            status = True
-            time.sleep(2)
-            driver.find_element_by_id('m15f1c9f0-pb').click()
+    zakrit()
     txt2.delete('1.0', tk.END)
     i = 0
     while i < 35:
@@ -158,16 +141,7 @@ def clickedvib():
     driver.find_element_by_id('m9e96a86b-tb').click()
     driver.find_element_by_id('m9e96a86b-tb').send_keys('25. \ 25.2. \ 25.2.2.')
     driver.find_element_by_id('m1317c3f5-pb').click()
-    status = False
-    while not status:
-        try:
-            driver.find_element_by_id('m15f1c9f0-pb').is_displayed()
-        except:
-            status = False
-        else:
-            status = True
-            time.sleep(2)
-            driver.find_element_by_id('m15f1c9f0-pb').click()
+    zakrit()
     txt2.delete('1.0', tk.END)
     i = 0
     while i < 35:
@@ -186,16 +160,7 @@ def clickedmanual():
     driver.find_element_by_id('m9e96a86b-tb').click()
     driver.find_element_by_id('m9e96a86b-tb').send_keys('25. \ 25.2. \ 25.2.2.')
     driver.find_element_by_id('m1317c3f5-pb').click()
-    status = False
-    while not status:
-        try:
-            driver.find_element_by_id('m15f1c9f0-pb').is_displayed()
-        except:
-            status = False
-        else:
-            status = True
-            time.sleep(2)
-            driver.find_element_by_id('m15f1c9f0-pb').click()
+    zakrit()
     txt2.delete('1.0', tk.END)
     i = 0
     while i < 35:
@@ -214,16 +179,7 @@ def clickedupdate():
     driver.find_element_by_id('m9e96a86b-tb').click()
     driver.find_element_by_id('m9e96a86b-tb').send_keys('25. \ 25.7.')
     driver.find_element_by_id('m1317c3f5-pb').click()
-    status = False
-    while not status:
-        try:
-            driver.find_element_by_id('m15f1c9f0-pb').is_displayed()
-        except:
-            status = False
-        else:
-            status = True
-            time.sleep(2)
-            driver.find_element_by_id('m15f1c9f0-pb').click()
+    zakrit()
     txt2.delete('1.0', tk.END)
     i = 0
     while i < 35:
