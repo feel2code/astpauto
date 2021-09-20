@@ -6,6 +6,7 @@ import pyperclip
 import tkinter as tk
 from tkinter import *
 from tkinter import scrolledtext
+import time
 # вход в астп
 driver = webdriver.Firefox(executable_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/geckodriver',
                            service_log_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/driver.log')
@@ -61,6 +62,7 @@ def gecko():
         except:
             status = False
     # создаем ДРЗ
+    time.sleep(1)
     driver.find_element_by_id('m3b854f9f-sc_div').click()
     status = False
     while not status:
@@ -69,6 +71,7 @@ def gecko():
         except:
             status = False
     # Вводим данные по задаче
+    time.sleep(1)
     driver.find_element_by_id('ma7efa7a3-tb').click()
 
 # закрыть после создания ДРЗ
@@ -79,6 +82,7 @@ def zakrit():
             status = driver.find_element_by_id('m15f1c9f0-pb').is_displayed()
         except:
             status = False
+    time.sleep(2)
     driver.find_element_by_id('m15f1c9f0-pb').click()
 # кнопка для скриптов
 def clicked():
