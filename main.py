@@ -7,6 +7,10 @@ import tkinter as tk
 from tkinter import *
 from tkinter import scrolledtext
 import time
+from selenium.webdriver.firefox.options import Options
+# запуск браузера в фоне
+options = Options()
+options.add_argument('--headless')
 # вход в астп
 driver = webdriver.Firefox(executable_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/geckodriver',
                            service_log_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/driver.log')
