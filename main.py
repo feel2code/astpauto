@@ -8,18 +8,20 @@ import tkinter as tk
 from tkinter import *
 from tkinter import scrolledtext
 import time
+from connectconf import *
 # запуск браузера в фоне
 opts = Options()
 opts.headless = True
 # вход в астп
+
 driver = webdriver.Firefox(executable_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/geckodriver',
                            service_log_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/driver.log',
                            options=opts)
 driver.get('http://astp/maximo/')
 s_username = driver.find_element_by_name("username")
 s_password = driver.find_element_by_name('password')
-s_username.send_keys("ivanovaeln")
-s_password.send_keys("Eivan9073-")
+s_username.send_keys(username)
+s_password.send_keys(password)
 status = False
 while not status:
     try:
