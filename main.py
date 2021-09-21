@@ -2,18 +2,19 @@
 # -*- coding: utf-8 -*-
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.firefox.options import Options
 import pyperclip
 import tkinter as tk
 from tkinter import *
 from tkinter import scrolledtext
 import time
-from selenium.webdriver.firefox.options import Options
 # запуск браузера в фоне
-options = Options()
-options.add_argument('--headless')
+opts = Options()
+opts.headless = True
 # вход в астп
 driver = webdriver.Firefox(executable_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/geckodriver',
-                           service_log_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/driver.log')
+                           service_log_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/driver.log',
+                           options=opts)
 driver.get('http://astp/maximo/')
 s_username = driver.find_element_by_name("username")
 s_password = driver.find_element_by_name('password')
@@ -58,6 +59,7 @@ def gecko():
             status = False
     driver.find_element_by_id('quicksearch').click()
     driver.find_element_by_id('quicksearch').send_keys(rz)
+    driver.find_element_by_id('quicksearch').click()
     driver.find_element_by_id('quicksearch').send_keys(Keys.RETURN)
     status = False
     while not status:
