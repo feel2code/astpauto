@@ -11,9 +11,8 @@ import time
 from connectconf import *
 # запуск браузера в фоне
 opts = Options()
-opts.headless = True
+# opts.headless = True
 # вход в астп
-
 driver = webdriver.Firefox(executable_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/geckodriver',
                            service_log_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/driver.log',
                            options=opts)
@@ -95,7 +94,7 @@ def zakrit():
 # кнопка для скриптов
 def clicked():
     snils = txt2.get('1.0', '1.11')
-    a1 = " select (select sc.cit_snils from msk.citizen as sc inner join msk.oper_history as so on sc.cit_id = so.cit_id inner join msk.portfolio as sp on so.oph_id = sp.oph_id inner join msk.doc as sd on sp.pf_id = sd.pf_id  where (sd.doc_id = d.doc_id)) as $$$_CLASSIC_$4_6388_8758208, d.doc_id, cdt.cdt_id, cdt.cdt_name, d.doc_incoming_num, d.doc_date, d.doc_is_actual, d.cou_code, d.pf_id, p.ccs_id, p.cou_code as expr1, de.dec_date,  de.dec_is_approve, de.dec_is_actual, de.dec_sum, de.app_id, cds.cds_name, a.app_sum, e.expt_short_name, d.doc_rec_date from msk.doc as d inner join msk.cls_doc_type as cdt on d.cdt_id = cdt.cdt_id inner join msk.portfolio as p on d.pf_id = p.pf_id left outer join msk.decision as de on de.doc_id = d.doc_id left outer join msk.cls_decision_status as cds on de.cds_id = cds.cds_id left outer join msk.application as a on d.doc_id = a.doc_id left outer join  msk.cls_expense_type as e on e.expt_id = a.expt_id where (d.pf_id in  (select p.pf_id from msk.portfolio as p inner join msk.oper_history as oh on p.oph_id = oh.oph_id inner join msk.citizen as c on oh.cit_id = c.cit_id where (c.cit_snils in (" + snils + ")))) and (((d.cdt_id < 92 or d.cdt_id > 288 or d.cdt_id in (97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 236, 237, 238, 254, 255, 258)) and d.cdt_id<1000) or ((d.cdt_id < 1092 or d.cdt_id > 1288 or d.cdt_id in (1097, 1098, 1099, 1100, 1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1236, 1237, 1238, 1254, 1255, 1258)) and d.cdt_id>1000)) order by $$$_CLASSIC_$4_6388_8758208, d.doc_date, d.doc_id;"
+    a1 = "select (select sc.cit_snils from msk.citizen as sc inner join msk.oper_history as so on sc.cit_id = so.cit_id inner join msk.portfolio as sp on so.oph_id = sp.oph_id inner join msk.doc as sd on sp.pf_id = sd.pf_id  where (sd.doc_id = d.doc_id)) as $$$_CLASSIC_$4_6388_8758208, d.doc_id, cdt.cdt_id, cdt.cdt_name, d.doc_incoming_num, d.doc_date, d.doc_is_actual, d.cou_code, d.pf_id, p.ccs_id, p.cou_code as expr1, de.dec_date,  de.dec_is_approve, de.dec_is_actual, de.dec_sum, de.app_id, cds.cds_name, a.app_sum, e.expt_short_name, d.doc_rec_date from msk.doc as d inner join msk.cls_doc_type as cdt on d.cdt_id = cdt.cdt_id inner join msk.portfolio as p on d.pf_id = p.pf_id left outer join msk.decision as de on de.doc_id = d.doc_id left outer join msk.cls_decision_status as cds on de.cds_id = cds.cds_id left outer join msk.application as a on d.doc_id = a.doc_id left outer join  msk.cls_expense_type as e on e.expt_id = a.expt_id where (d.pf_id in  (select p.pf_id from msk.portfolio as p inner join msk.oper_history as oh on p.oph_id = oh.oph_id inner join msk.citizen as c on oh.cit_id = c.cit_id where (c.cit_snils in (" + snils + ")))) and (((d.cdt_id < 92 or d.cdt_id > 288 or d.cdt_id in (97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 236, 237, 238, 254, 255, 258)) and d.cdt_id<1000) or ((d.cdt_id < 1092 or d.cdt_id > 1288 or d.cdt_id in (1097, 1098, 1099, 1100, 1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1236, 1237, 1238, 1254, 1255, 1258)) and d.cdt_id>1000)) order by $$$_CLASSIC_$4_6388_8758208, d.doc_date, d.doc_id;"
     a2 = "select msk.citizen_info.cinf_snils as $$$_APPLICATION_6388_8758208, a.* from msk.application as a inner join  msk.citizen_info on a.cinf_id = msk.citizen_info.per_id where (msk.citizen_info.cinf_snils = " + snils + ") and (a.doc_id is not null);"
     a3 = "select i.cinf_snils as $$$_DECISION_$_6388_8758208, msk.decision.* from msk.portfolio as p inner join msk.oper_history as o on p.oph_id = o.oph_id inner join  msk.citizen as c on o.cit_id = c.cit_id inner join msk.citizen_info as i on c.cinf_id = i.per_id inner join msk.doc as d on p.pf_id = d.pf_id inner join msk.decision on d.doc_id = msk.decision.doc_id where i.cinf_snils = " + snils + ";"
     a4 = "select cit.cit_snils as $$$_VYPISKA$_6388_8758208, op.opr_id, op.oph_id, op.doc_id, op.cot_id, op.opr_rec_date, op.opr_session_id, op.u_id, op.opr_sys_date, op.cause_doc_id, ot.cot_name, fop.opr_id as expr1, fop.fopr_sum, fop.fopr_available_sum, fop.fopr_reserved_sum, fop.fopr_remaining_sum, fop.cat_id from msk.operation as op inner join msk.cls_oper_type as ot on op.cot_id = ot.cot_id inner join msk.fin_operation as fop on op.opr_id = fop.opr_id inner join msk.oper_history as oph on op.oph_id = oph.oph_id inner join msk.citizen as cit on oph.cit_id = cit.cit_id where (cit.cit_snils = " + snils + ") order by op.opr_rec_date;"
@@ -104,8 +103,8 @@ def clicked():
     a7 = "select msk.citizen_info.cinf_snils as $$$_FIN_OPER_$_6388_8758208, msk.fin_operation.* from msk.citizen inner join msk.operation inner join  msk.oper_history on msk.operation.oph_id = msk.oper_history.oph_id on msk.citizen.cit_id = msk.oper_history.cit_id inner join msk.citizen_info on msk.citizen.cinf_id = msk.citizen_info.per_id inner join  msk.fin_operation on msk.operation.opr_id = msk.fin_operation.opr_id where msk.citizen_info.cinf_snils = " + snils + ";"
     a8 = "select i.cinf_snils as $$$_RECEIVER_$_6388_8758208, msk.receiver.* from msk.portfolio as p inner join msk.oper_history as o on p.oph_id = o.oph_id inner join msk.citizen as c on o.cit_id = c.cit_id inner join msk.citizen_info as i on c.cinf_id = i.per_id inner join  msk.doc as d on p.pf_id = d.pf_id inner join msk.payment on d.doc_id = msk.payment.doc_id inner join  msk.receiver on msk.payment.rec_id = msk.receiver.rec_id where (i.cinf_snils = " + snils + ");"
     a9 = "select msk.citizen_info.cinf_snils as $$$_CONTR_PAYM__6388_8758208, msk.contract_payment.* from msk.contract_payment inner join msk.application on msk.contract_payment.app_id = msk.application.doc_id inner join msk.citizen_info on msk.application.cinf_id = msk.citizen_info.per_id where (msk.citizen_info.cinf_snils = " + snils + ");"
-    a10 = " select msk.citizen_info.cinf_snils as $$$_SUM_REQ$_6388_8758208, msk.summary_request.* from msk.contract_payment inner join msk.application on msk.contract_payment.app_id = msk.application.doc_id inner join msk.citizen_info on msk.application.cinf_id = msk.citizen_info.per_id inner join msk.summary_request_contract_payment on msk.contract_payment.cp_id = msk.summary_request_contract_payment.cp_id inner join msk.summary_request on msk.summary_request_contract_payment.sr_id = msk.summary_request.sr_id where (msk.citizen_info.cinf_snils = " + snils + ");"
-    a11 = " SELECT MSK.CITIZEN_INFO.CINF_SNILS AS $$$_SUM_REQ_CON_6388_8758208, MSK.SUMMARY_REQUEST_CONTRACT_PAYMENT.SR_ID, MSK.SUMMARY_REQUEST_CONTRACT_PAYMENT.CP_ID FROM MSK.CONTRACT_PAYMENT INNER JOIN MSK.APPLICATION ON MSK.CONTRACT_PAYMENT.APP_ID = MSK.APPLICATION.DOC_ID INNER JOIN MSK.CITIZEN_INFO ON MSK.APPLICATION.CINF_ID = MSK.CITIZEN_INFO.PER_ID INNER JOIN MSK.SUMMARY_REQUEST_CONTRACT_PAYMENT ON MSK.CONTRACT_PAYMENT.CP_ID = MSK.SUMMARY_REQUEST_CONTRACT_PAYMENT.CP_ID WHERE        (MSK.CITIZEN_INFO.CINF_SNILS = " + snils + ");"
+    a10 = "select msk.citizen_info.cinf_snils as $$$_SUM_REQ$_6388_8758208, msk.summary_request.* from msk.contract_payment inner join msk.application on msk.contract_payment.app_id = msk.application.doc_id inner join msk.citizen_info on msk.application.cinf_id = msk.citizen_info.per_id inner join msk.summary_request_contract_payment on msk.contract_payment.cp_id = msk.summary_request_contract_payment.cp_id inner join msk.summary_request on msk.summary_request_contract_payment.sr_id = msk.summary_request.sr_id where (msk.citizen_info.cinf_snils = " + snils + ");"
+    a11 = "SELECT MSK.CITIZEN_INFO.CINF_SNILS AS $$$_SUM_REQ_CON_6388_8758208, MSK.SUMMARY_REQUEST_CONTRACT_PAYMENT.SR_ID, MSK.SUMMARY_REQUEST_CONTRACT_PAYMENT.CP_ID FROM MSK.CONTRACT_PAYMENT INNER JOIN MSK.APPLICATION ON MSK.CONTRACT_PAYMENT.APP_ID = MSK.APPLICATION.DOC_ID INNER JOIN MSK.CITIZEN_INFO ON MSK.APPLICATION.CINF_ID = MSK.CITIZEN_INFO.PER_ID INNER JOIN MSK.SUMMARY_REQUEST_CONTRACT_PAYMENT ON MSK.CONTRACT_PAYMENT.CP_ID = MSK.SUMMARY_REQUEST_CONTRACT_PAYMENT.CP_ID WHERE        (MSK.CITIZEN_INFO.CINF_SNILS = " + snils + ");"
     a12 = "select msk.citizen_info.cinf_snils as $$$_SUM_CONT_PA_6388_8758208, msk.summary_contract_payment.psu_id, msk.summary_contract_payment.cp_id, msk.summary_contract_payment.cpse_id, msk.summary_contract_payment.scp_reason_comment, msk.summary_contract_payment.dec_id, msk.summary_contract_payment.original_cpse_id, msk.summary_contract_payment.dcr_id from msk.application as a inner join msk.citizen_info on a.cinf_id = msk.citizen_info.per_id inner join msk.contract_payment on a.doc_id = msk.contract_payment.app_id inner join msk.summary_contract_payment on msk.contract_payment.cp_id = msk.summary_contract_payment.cp_id where (msk.citizen_info.cinf_snils = " + snils + ");"
     a13 = "SELECT MSK.CITIZEN_INFO.CINF_SNILS AS $$$_REF_PAY_APP_6388_8758208, MSK.REFUND_PAY_APPENDIX.* FROM MSK.APPLICATION AS a INNER JOIN MSK.CITIZEN_INFO ON a.CINF_ID = MSK.CITIZEN_INFO.PER_ID INNER JOIN MSK.REFUND_PAY_APPENDIX ON a.DOC_ID = MSK.REFUND_PAY_APPENDIX.APP_ID WHERE (MSK.CITIZEN_INFO.CINF_SNILS = " + snils + ");"
     a14 = "select msk.citizen_info.cinf_snils as $$$_CALC_CONF_I_6388_8758208, msk.calc_confirm_info.* from msk.application as a inner join msk.citizen_info on a.cinf_id = msk.citizen_info.per_id inner join msk.calc_confirm_info on a.doc_id = msk.calc_confirm_info.doc_id where msk.citizen_info.cinf_snils = " + snils + ";"
@@ -197,10 +196,61 @@ def clickedupdate():
     while i < 35:
         txt.delete(0)
         i += 1
+#проверка выполнения
+def chotam():
+    rz = txt.get()
+    status = False
+    while not status:
+        try:
+            status = driver.find_element_by_class_name('homebutton').is_displayed()
+        except:
+            status = False
+    driver.find_element_by_class_name('homebutton').click()
+    status = False
+    while not status:
+        try:
+            status = driver.find_element_by_id('m1e20cba1-sct_42772').is_displayed()
+        except:
+            status = False
+    driver.find_element_by_id('m1e20cba1-sct_42772').click()
+    status = False
+    while not status:
+        try:
+            status = driver.find_element_by_id('me148583e-hb_header_10').is_displayed()
+        except:
+            status = False
+    driver.find_element_by_id('me148583e-hb_header_10').click()
+    status = False
+    while not status:
+        try:
+            status = driver.find_element_by_id('quicksearch').is_displayed()
+        except:
+            status = False
+    driver.find_element_by_id('quicksearch').click()
+    driver.find_element_by_id('quicksearch').send_keys(rz)
+    driver.find_element_by_id('quicksearch').click()
+    driver.find_element_by_id('quicksearch').send_keys(Keys.RETURN)
+    status=False
+    while not status:
+        try:
+            status = driver.find_element_by_id('m4326cf1d-tab_anchor').is_displayed()
+        except:
+            status = False
+    time.sleep(1)
+    driver.find_element_by_id('m4326cf1d-tab_anchor').click()
+    status = False
+    while not status:
+        try:
+            status = driver.find_element_by_id('toolactions_RESETREC-tbb_anchor').is_displayed()
+        except:
+            status = False
+    time.sleep(1)
+    driver.find_element_by_id('toolactions_RESETREC-tbb_anchor').click()
 # настройка окна
 window = Tk()
 top = Frame(window)
 bottom = Frame(window)
+bottom2 = Frame(window)
 window.title('Выгрузка данных по СНИЛСУ в АСТП')
 window.geometry('550x300')
 txt = Entry(top, width=19)
@@ -209,12 +259,15 @@ btn1 = Button(top, text="Выборка", command=clickedvib)
 btn = Button(top, text="Скрипты", command=clicked)
 btn2 = Button(top, text="Ручной селект", command=clickedmanual)
 btn3 = Button(top, text="Ручной апдейт", command=clickedupdate)
+btnchck = Button(bottom2, text='Проверка', command=chotam)
 top.pack()
 bottom.pack()
+bottom2.pack()
 txt.pack(side=LEFT)
 btn1.pack(side=LEFT)
 btn.pack(side=LEFT)
 btn2.pack(side=LEFT)
 btn3.pack(side=LEFT)
 txt2.pack(side=LEFT)
+btnchck.pack(side=LEFT)
 window.mainloop()

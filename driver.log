@@ -694,3 +694,139 @@ Exiting due to channel error.
 Exiting due to channel error.
 1632230128538	addons.xpi	ERROR	Failed to download system add-on reset-search-defaults@mozilla.com: Error: Failed downloading via XHR, status: 0, reason: error(resource://gre/modules/addons/ProductAddonChecker.jsm:244:16) JS Stack trace: fail@ProductAddonChecker.jsm:244:16
 1632230128548	addons.xpi	ERROR	Failed to download system add-on addons-search-detection@mozilla.com: Error: Failed downloading via XHR, status: 0, reason: error(resource://gre/modules/addons/ProductAddonChecker.jsm:244:16) JS Stack trace: fail@ProductAddonChecker.jsm:244:16
+1632230252743	Marionette	INFO	Stopped listening on port 64100
+JavaScript error: resource:///modules/Interactions.jsm, line 230: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1632298437260	geckodriver	INFO	Listening on 127.0.0.1:53905
+1632298437281	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/var/folders/1t/0cgrwk454rl3_dl7m5m4_kxh0000gn/T/rust_mozprofileK8dkt9"
+*** You are running in headless mode.
+1632298437929	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1t/0cgrwk454rl3_dl7m5m4_kxh0000gn/T/rust_mozprofileK8dkt9/search.json.mozlz4", (void 0)))
+console.error: BackgroundUpdate: 
+  _reasonsToNotScheduleUpdates: Failed to check for Maintenance Service Registry Key: [Exception... "Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIUpdateProcessor.getServiceRegKeyExists]"  nsresult: "0x80004001 (NS_ERROR_NOT_IMPLEMENTED)"  location: "JS frame :: resource://gre/modules/BackgroundUpdate.jsm :: _reasonsToNotScheduleUpdates :: line 243"  data: no]
+1632298440268	Marionette	INFO	Listening on port 53910
+1632298440390	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://astp/maximo/webclient/login/login.jsp?welcome=true, line 1: TypeError: document.getElementById(...) is null
+1632298486417	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:238:19
+TimedPromise@chrome://remote/content/marionette/sync.js:223:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+req.getText@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:3330
+_33@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:16205
+_24f@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:53674
+dojo/_base/loader/</dojo.require@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:53973
+@http://astp/maximo/ui/?event=loadapp&value=wotrack&uisessionid=27885&_tt=rs9f8uq7fvbdr02rf7mjh0o5eb:955:8
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+1632298714679	geckodriver	INFO	Listening on 127.0.0.1:54024
+1632298714700	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/1t/0cgrwk454rl3_dl7m5m4_kxh0000gn/T/rust_mozprofileTfX25I"
+1632298715660	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1t/0cgrwk454rl3_dl7m5m4_kxh0000gn/T/rust_mozprofileTfX25I/search.json.mozlz4", (void 0)))
+console.error: BackgroundUpdate: 
+  _reasonsToNotScheduleUpdates: Failed to check for Maintenance Service Registry Key: [Exception... "Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIUpdateProcessor.getServiceRegKeyExists]"  nsresult: "0x80004001 (NS_ERROR_NOT_IMPLEMENTED)"  location: "JS frame :: resource://gre/modules/BackgroundUpdate.jsm :: _reasonsToNotScheduleUpdates :: line 243"  data: no]
+1632298718593	Marionette	INFO	Listening on port 54029
+1632298718676	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://astp/maximo/webclient/login/login.jsp?welcome=true, line 1: TypeError: document.getElementById(...) is null
+1632298774363	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:238:19
+TimedPromise@chrome://remote/content/marionette/sync.js:223:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+req.getText@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:3330
+_33@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:16205
+_24f@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:53674
+dojo/_base/loader/</dojo.require@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:53973
+@http://astp/maximo/ui/?event=loadapp&value=wotrack&uisessionid=28153&_tt=7h4fv88via76t02skvo5109e04:955:8
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+1632298840641	geckodriver	INFO	Listening on 127.0.0.1:54500
+1632298840657	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/1t/0cgrwk454rl3_dl7m5m4_kxh0000gn/T/rust_mozprofile0bWH5D"
+1632298841458	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1t/0cgrwk454rl3_dl7m5m4_kxh0000gn/T/rust_mozprofile0bWH5D/search.json.mozlz4", (void 0)))
+console.error: BackgroundUpdate: 
+  _reasonsToNotScheduleUpdates: Failed to check for Maintenance Service Registry Key: [Exception... "Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIUpdateProcessor.getServiceRegKeyExists]"  nsresult: "0x80004001 (NS_ERROR_NOT_IMPLEMENTED)"  location: "JS frame :: resource://gre/modules/BackgroundUpdate.jsm :: _reasonsToNotScheduleUpdates :: line 243"  data: no]
+1632298844114	Marionette	INFO	Listening on port 54505
+1632298844197	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://astp/maximo/webclient/login/login.jsp?welcome=true, line 1: TypeError: document.getElementById(...) is null
+1632298900035	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:238:19
+TimedPromise@chrome://remote/content/marionette/sync.js:223:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+req.getText@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:3330
+_33@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:16205
+_24f@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:53674
+dojo/_base/loader/</dojo.require@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:53973
+@http://astp/maximo/ui/?event=loadapp&value=wotrack&uisessionid=26103&_tt=ngtiruv5irionbfheqb94frt0j:955:8
+1632298974210	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:238:19
+TimedPromise@chrome://remote/content/marionette/sync.js:223:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+1632473419508	geckodriver	INFO	Listening on 127.0.0.1:62805
+1632473419627	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/1t/0cgrwk454rl3_dl7m5m4_kxh0000gn/T/rust_mozprofilegGpUPp"
+1632473426541	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1t/0cgrwk454rl3_dl7m5m4_kxh0000gn/T/rust_mozprofilegGpUPp/search.json.mozlz4", (void 0)))
+console.error: BackgroundUpdate: 
+  _reasonsToNotScheduleUpdates: Failed to check for Maintenance Service Registry Key: [Exception... "Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIUpdateProcessor.getServiceRegKeyExists]"  nsresult: "0x80004001 (NS_ERROR_NOT_IMPLEMENTED)"  location: "JS frame :: resource://gre/modules/BackgroundUpdate.jsm :: _reasonsToNotScheduleUpdates :: line 243"  data: no]
+1632473429823	Marionette	INFO	Listening on port 62810
+1632473476674	geckodriver	INFO	Listening on 127.0.0.1:62866
+1632473476703	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/1t/0cgrwk454rl3_dl7m5m4_kxh0000gn/T/rust_mozprofileNVC0tC"
+1632473477868	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1t/0cgrwk454rl3_dl7m5m4_kxh0000gn/T/rust_mozprofileNVC0tC/search.json.mozlz4", (void 0)))
+console.error: BackgroundUpdate: 
+  _reasonsToNotScheduleUpdates: Failed to check for Maintenance Service Registry Key: [Exception... "Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIUpdateProcessor.getServiceRegKeyExists]"  nsresult: "0x80004001 (NS_ERROR_NOT_IMPLEMENTED)"  location: "JS frame :: resource://gre/modules/BackgroundUpdate.jsm :: _reasonsToNotScheduleUpdates :: line 243"  data: no]
+1632473481952	Marionette	INFO	Listening on port 62871
+1632473482031	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://astp/maximo/webclient/login/login.jsp?welcome=true, line 1: TypeError: document.getElementById(...) is null
+console.log: WebExtensions: reset-default-search: starting.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+1632473983475	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:238:19
+TimedPromise@chrome://remote/content/marionette/sync.js:223:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+req.getText@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:3330
+_33@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:16205
+_24f@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:53674
+dojo/_base/loader/</dojo.require@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:53973
+@http://astp/maximo/ui/?event=loadapp&value=wotrack&uisessionid=620&_tt=si8bkhifqg0ceragn4e5o05feg:955:8
+console.log: WebExtensions: reset-default-search: starting.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+1632474941801	geckodriver	INFO	Listening on 127.0.0.1:63122
+1632474942803	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/1t/0cgrwk454rl3_dl7m5m4_kxh0000gn/T/rust_mozprofileJuyb9p"
+1632474944021	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1t/0cgrwk454rl3_dl7m5m4_kxh0000gn/T/rust_mozprofileJuyb9p/search.json.mozlz4", (void 0)))
+console.error: BackgroundUpdate: 
+  _reasonsToNotScheduleUpdates: Failed to check for Maintenance Service Registry Key: [Exception... "Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIUpdateProcessor.getServiceRegKeyExists]"  nsresult: "0x80004001 (NS_ERROR_NOT_IMPLEMENTED)"  location: "JS frame :: resource://gre/modules/BackgroundUpdate.jsm :: _reasonsToNotScheduleUpdates :: line 243"  data: no]
+1632474946791	Marionette	INFO	Listening on port 63130
+1632474946887	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://astp/maximo/webclient/login/login.jsp?welcome=true, line 1: TypeError: document.getElementById(...) is null
