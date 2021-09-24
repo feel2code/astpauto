@@ -28,36 +28,23 @@ while not status:
     except:
         status = False
 driver.find_element_by_class_name('tiv_btn').click()
+status = False
+while not status:
+    try:
+        status = driver.find_element_by_id('m7f8f3e49_ns_menu_WO_MODULE_a').is_displayed()
+    except:
+        status = False
+driver.find_element_by_id('m7f8f3e49_ns_menu_WO_MODULE_a').click()
+status = False
+while not status:
+    try:
+        status = driver.find_element_by_id('m7f8f3e49_ns_menu_WO_MODULE_sub_changeapp_WOTRACK').is_displayed()
+    except:
+        status = False
+driver.find_element_by_id('m7f8f3e49_ns_menu_WO_MODULE_sub_changeapp_WOTRACK').click()
 # метод геко
 def gecko():
     rz = txt.get()
-    status = False
-    while not status:
-        try:
-            status = driver.find_element_by_class_name('homebutton').is_displayed()
-        except:
-            status = False
-    driver.find_element_by_class_name('homebutton').click()
-    status = False
-    while not status:
-        try:
-            status = driver.find_element_by_id('m1e20cba1-sct_42772').is_displayed()
-        except:
-            status = False
-    driver.find_element_by_id('m1e20cba1-sct_42772').click()
-    status = False
-    while not status:
-        try:
-            status = driver.find_element_by_id('me148583e-hb_header_10').is_displayed()
-        except:
-            status = False
-    driver.find_element_by_id('me148583e-hb_header_10').click()
-    status = False
-    while not status:
-        try:
-            status = driver.find_element_by_id('quicksearch').is_displayed()
-        except:
-            status = False
     driver.find_element_by_id('quicksearch').click()
     driver.find_element_by_id('quicksearch').send_keys(rz)
     driver.find_element_by_id('quicksearch').click()
@@ -199,33 +186,6 @@ def clickedupdate():
 #проверка выполнения
 def chotam():
     rz = txt.get()
-    status = False
-    while not status:
-        try:
-            status = driver.find_element_by_class_name('homebutton').is_displayed()
-        except:
-            status = False
-    driver.find_element_by_class_name('homebutton').click()
-    status = False
-    while not status:
-        try:
-            status = driver.find_element_by_id('m1e20cba1-sct_42772').is_displayed()
-        except:
-            status = False
-    driver.find_element_by_id('m1e20cba1-sct_42772').click()
-    status = False
-    while not status:
-        try:
-            status = driver.find_element_by_id('me148583e-hb_header_10').is_displayed()
-        except:
-            status = False
-    driver.find_element_by_id('me148583e-hb_header_10').click()
-    status = False
-    while not status:
-        try:
-            status = driver.find_element_by_id('quicksearch').is_displayed()
-        except:
-            status = False
     driver.find_element_by_id('quicksearch').click()
     driver.find_element_by_id('quicksearch').send_keys(rz)
     driver.find_element_by_id('quicksearch').click()
