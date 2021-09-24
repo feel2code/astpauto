@@ -196,7 +196,7 @@ def chotam():
             status = driver.find_element_by_id('m4326cf1d-tab_anchor').is_displayed()
         except:
             status = False
-    time.sleep(1)
+    time.sleep(2)
     driver.find_element_by_id('m4326cf1d-tab_anchor').click()
     status = False
     while not status:
@@ -204,7 +204,7 @@ def chotam():
             status = driver.find_element_by_id('toolactions_RESETREC-tbb_anchor').is_displayed()
         except:
             status = False
-    time.sleep(1)
+    time.sleep(2)
     driver.find_element_by_id('toolactions_RESETREC-tbb_anchor').click()
 # настройка окна
 window = Tk()
