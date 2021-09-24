@@ -830,3 +830,15 @@ console.error: BackgroundUpdate:
 1632474946791	Marionette	INFO	Listening on port 63130
 1632474946887	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 JavaScript error: http://astp/maximo/webclient/login/login.jsp?welcome=true, line 1: TypeError: document.getElementById(...) is null
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1632475091891	geckodriver	INFO	Listening on 127.0.0.1:63244
+1632475091905	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/1t/0cgrwk454rl3_dl7m5m4_kxh0000gn/T/rust_mozprofileX7d1ZH"
+1632475092547	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1t/0cgrwk454rl3_dl7m5m4_kxh0000gn/T/rust_mozprofileX7d1ZH/search.json.mozlz4", (void 0)))
+console.error: BackgroundUpdate: 
+  _reasonsToNotScheduleUpdates: Failed to check for Maintenance Service Registry Key: [Exception... "Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIUpdateProcessor.getServiceRegKeyExists]"  nsresult: "0x80004001 (NS_ERROR_NOT_IMPLEMENTED)"  location: "JS frame :: resource://gre/modules/BackgroundUpdate.jsm :: _reasonsToNotScheduleUpdates :: line 243"  data: no]
+1632475094784	Marionette	INFO	Listening on port 63249
+1632475094859	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://astp/maximo/webclient/login/login.jsp?welcome=true, line 1: TypeError: document.getElementById(...) is null
