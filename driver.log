@@ -896,3 +896,126 @@ console.error: BackgroundUpdate:
 1632475815718	Marionette	INFO	Listening on port 64807
 1632475815833	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 JavaScript error: http://astp/maximo/webclient/login/login.jsp?welcome=true, line 1: TypeError: document.getElementById(...) is null
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1632475904424	geckodriver	INFO	Listening on 127.0.0.1:64920
+1632475904445	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/1t/0cgrwk454rl3_dl7m5m4_kxh0000gn/T/rust_mozprofileN7G1Ub"
+1632475905349	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1t/0cgrwk454rl3_dl7m5m4_kxh0000gn/T/rust_mozprofileN7G1Ub/search.json.mozlz4", (void 0)))
+console.error: BackgroundUpdate: 
+  _reasonsToNotScheduleUpdates: Failed to check for Maintenance Service Registry Key: [Exception... "Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIUpdateProcessor.getServiceRegKeyExists]"  nsresult: "0x80004001 (NS_ERROR_NOT_IMPLEMENTED)"  location: "JS frame :: resource://gre/modules/BackgroundUpdate.jsm :: _reasonsToNotScheduleUpdates :: line 243"  data: no]
+1632475907950	Marionette	INFO	Listening on port 64925
+1632475907979	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://astp/maximo/webclient/login/login.jsp?welcome=true, line 1: TypeError: document.getElementById(...) is null
+console.log: WebExtensions: reset-default-search: starting.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+1632485816680	geckodriver	INFO	Listening on 127.0.0.1:49561
+1632485816697	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/1t/0cgrwk454rl3_dl7m5m4_kxh0000gn/T/rust_mozprofilePkY2TU"
+1632485817369	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1t/0cgrwk454rl3_dl7m5m4_kxh0000gn/T/rust_mozprofilePkY2TU/search.json.mozlz4", (void 0)))
+console.error: BackgroundUpdate: 
+  _reasonsToNotScheduleUpdates: Failed to check for Maintenance Service Registry Key: [Exception... "Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIUpdateProcessor.getServiceRegKeyExists]"  nsresult: "0x80004001 (NS_ERROR_NOT_IMPLEMENTED)"  location: "JS frame :: resource://gre/modules/BackgroundUpdate.jsm :: _reasonsToNotScheduleUpdates :: line 243"  data: no]
+1632485819954	Marionette	INFO	Listening on port 49566
+1632485820043	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://astp/maximo/webclient/login/login.jsp?welcome=true, line 1: TypeError: document.getElementById(...) is null
+1632485846361	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:238:19
+TimedPromise@chrome://remote/content/marionette/sync.js:223:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+1632485849436	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:238:19
+TimedPromise@chrome://remote/content/marionette/sync.js:223:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+1632485850825	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:238:19
+TimedPromise@chrome://remote/content/marionette/sync.js:223:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+1632486300420	Marionette	INFO	Stopped listening on port 64925
+JavaScript error: resource:///modules/Interactions.jsm, line 230: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+console.log: WebExtensions: reset-default-search: starting.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+1632488731264	Marionette	INFO	Stopped listening on port 49566
+JavaScript error: resource:///modules/Interactions.jsm, line 230: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1632488737973	geckodriver	INFO	Listening on 127.0.0.1:49903
+1632488737986	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/1t/0cgrwk454rl3_dl7m5m4_kxh0000gn/T/rust_mozprofileZh1J6N"
+1632488738637	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1t/0cgrwk454rl3_dl7m5m4_kxh0000gn/T/rust_mozprofileZh1J6N/search.json.mozlz4", (void 0)))
+console.error: BackgroundUpdate: 
+  _reasonsToNotScheduleUpdates: Failed to check for Maintenance Service Registry Key: [Exception... "Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIUpdateProcessor.getServiceRegKeyExists]"  nsresult: "0x80004001 (NS_ERROR_NOT_IMPLEMENTED)"  location: "JS frame :: resource://gre/modules/BackgroundUpdate.jsm :: _reasonsToNotScheduleUpdates :: line 243"  data: no]
+1632488741173	Marionette	INFO	Listening on port 49908
+1632488741227	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://astp/maximo/webclient/login/login.jsp?welcome=true, line 1: TypeError: document.getElementById(...) is null
+1632488747699	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:238:19
+TimedPromise@chrome://remote/content/marionette/sync.js:223:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+req.getText@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:3330
+_33@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:16205
+_9@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:330
+_7b/<@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:7143
+_38@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:13512
+_7b@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:7129
+_7f/<@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:17144
+_9@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:330
+_7f@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:17120
+_f5@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:15648
+req.getText@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:3403
+_33@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:16205
+_24f@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:53674
+dojo/_base/loader/</dojo.require@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:53973
+@http://astp/maximo/webclient/javascript/tpae-20190921-1108/async.js line 1112 > eval:4:14
+dojo/ready/</dojo.addOnLoad/_579<@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:149238
+_575@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:148863
+dojo/ready/</dojo.addOnLoad@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:149344
+@http://astp/maximo/webclient/javascript/tpae-20190921-1108/async.js line 1112 > eval:2:12
+processJavaScript@http://astp/maximo/webclient/javascript/tpae-20190921-1108/async.js:1112:3
+processXHR@http://astp/maximo/webclient/javascript/tpae-20190921-1108/async.js:994:21
+processPortletXHR@http://astp/maximo/webclient/javascript/tpae-20190921-1108/library.js:2372:13
+load@http://astp/maximo/webclient/javascript/tpae-20190921-1108/async.js:720:21
+dojo/_base/xhr/</dojo._ioSetArgs/<@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:114731
+_189@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:37240
+_187@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:36928
+dojo/_base/Deferred/</dojo.Deferred/this.callback@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:37997
+_189@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:37536
+_187@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:36928
+dojo/_base/Deferred/</dojo.Deferred/this.callback@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:37997
+dojo/_base/xhr/</dojo.xhr/<@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:117449
+_462@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:119718
+_45c@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:119582
+_461/this.resolve@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:121043
+_468@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:120320
+_462@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:119934
+_45c@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:119582
+_461/this.resolve@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:121043
+_468@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:120320
+_462@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:119999
+_45c@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:119582
+_461/this.resolve@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:121043
+_468@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:120320
+_462@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:119934
+_45c@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:119582
+_461/this.resolve@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:121043
+_396@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:97217
+_3a2@http://astp/maximo/webclient/javascript/dojo-20190921-1108/dojo/dojo.js:15:97521
+1632488894953	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:238:19
+TimedPromise@chrome://remote/content/marionette/sync.js:223:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+1632489035031	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:238:19
+TimedPromise@chrome://remote/content/marionette/sync.js:223:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+console.log: WebExtensions: reset-default-search: starting.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.

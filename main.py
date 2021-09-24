@@ -41,7 +41,8 @@ while not status:
         status = driver.find_element_by_id('m7f8f3e49_ns_menu_WO_MODULE_sub_changeapp_WOTRACK').is_displayed()
     except:
         status = False
-driver.find_element_by_id('m7f8f3e49_ns_menu_WO_MODULE_sub_changeapp_WOTRACK').click()
+if status == True:
+    driver.find_element_by_id('m7f8f3e49_ns_menu_WO_MODULE_sub_changeapp_WOTRACK').click()
 # метод геко
 def gecko():
     rz = txt.get()
