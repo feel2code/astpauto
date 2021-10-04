@@ -32,6 +32,8 @@ while not status:
     except ImportError:
         status = False
 driver.find_element_by_class_name('tiv_btn').click()
+# старый способ перехода к РЗ
+'''
 status = False
 while not status:
     try:
@@ -47,10 +49,31 @@ while not status:
         status = False
 if status:
     driver.find_element_by_id('m7f8f3e49_ns_menu_WO_MODULE_sub_changeapp_WOTRACK').click()
-# запуск веб драйвера
-
-
+'''
 def gecko():
+    rz = txt.get()
+    driver.get('http://astp/maximo/ui/login?event=loadapp&value=wotrack&additionalevent=useqbe&additionaleventvalue=wonum='+rz+'&forcereload=true')
+    status1 = False
+    while not status1:
+        try:
+            status1 = driver.find_element_by_id('m3b854f9f-sc_div').is_displayed()
+        except ImportError:
+            status1 = False
+    # создаем ДРЗ
+    time.sleep(1)
+    driver.find_element_by_id('m3b854f9f-sc_div').click()
+    status2 = False
+    while not status2:
+        try:
+            status2 = driver.find_element_by_id('ma7efa7a3-tb').is_displayed()
+        except ImportError:
+            status2 = False
+    # Вводим данные по задаче
+    time.sleep(1)
+    driver.find_element_by_id('ma7efa7a3-tb').click()
+
+# старый метод выбора таски
+def spin():
     rz = txt.get()
     driver.find_element_by_id('quicksearch').click()
     driver.find_element_by_id('quicksearch').send_keys(rz)
@@ -177,10 +200,10 @@ def clickedupdate():
     while i < 35:
         txt.delete(0)
         i += 1
-# проверка выполнения
+# проверка выполнения, не реализовано
 
 
-def chotam():
+def check():
     rz = txt.get()
     driver.find_element_by_id('quicksearch').click()
     driver.find_element_by_id('quicksearch').send_keys(rz)
@@ -217,7 +240,7 @@ btn1 = Button(top, text="Выборка", command=clickedvib)
 btn = Button(top, text="Скрипты", command=clicked)
 btn2 = Button(top, text="Ручной селект", command=clickedmanual)
 btn3 = Button(top, text="Ручной апдейт", command=clickedupdate)
-btnchck = Button(bottom2, text='Проверка', command=chotam)
+# btnchck = Button(bottom2, text='Проверка', command=check)
 top.pack()
 bottom.pack()
 bottom2.pack()
@@ -227,5 +250,5 @@ btn.pack(side=LEFT)
 btn2.pack(side=LEFT)
 btn3.pack(side=LEFT)
 txt2.pack(side=LEFT)
-btnchck.pack(side=LEFT)
+# btnchck.pack(side=LEFT)
 window.mainloop()
