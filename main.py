@@ -13,7 +13,7 @@ from connectconf import *
 from scripts import *
 # запуск браузера в фоне
 opts = Options()
-# opts.headless = True # раскомментировать для запуска в фоне
+opts.headless = True # раскомментировать для запуска в фоне
 # вход в астп
 driver = webdriver.Firefox(executable_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/geckodriver',
                            service_log_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/driver.log',
