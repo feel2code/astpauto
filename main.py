@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# Приложение разработано для внутреннего оперативного создания тасок в интерфейсе таскменеджера IBM WebSphere
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.firefox.options import Options
@@ -12,12 +13,14 @@ from connectconf import *
 from scripts import *
 # запуск браузера в фоне
 opts = Options()
-# opts.headless = True
+# opts.headless = True # раскомментировать для запуска в фоне
 # вход в астп
 driver = webdriver.Firefox(executable_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/geckodriver',
                            service_log_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/driver.log',
                            options=opts)
+# домен скрыт в целях безопасности
 driver.get('http://astp/maximo/')
+# логин пароль для входа в интерфейс IBM WebSphere
 s_username = driver.find_element_by_name("username")
 s_password = driver.find_element_by_name('password')
 s_username.send_keys(username)
@@ -44,7 +47,7 @@ while not status:
         status = False
 if status:
     driver.find_element_by_id('m7f8f3e49_ns_menu_WO_MODULE_sub_changeapp_WOTRACK').click()
-# метод геко
+# запуск веб драйвера
 
 
 def gecko():
