@@ -10,7 +10,6 @@ from tkinter import scrolledtext
 import time
 from connectconf import *
 from scripts import *
-
 # запуск браузера в фоне
 opts = Options()
 # opts.headless = True
