@@ -8,28 +8,31 @@ import tkinter as tk
 from tkinter import *
 from tkinter import scrolledtext
 import time
-from connectconf import *
+from connection_configure import *
 from scripts import *
+import os
 
 opts = Options()
-opts.headless = True  # open browser in background
-# enter to taskmanager
-driver = webdriver.Firefox(executable_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/geckodriver',
-                           service_log_path='/Users/felixmac/Documents/PyCharmProjects/astpauto/driver.log',
+# opts.headless = True  # open browser in background
+# enter to task manager
+
+driver_path = os.path.dirname(os.path.abspath(__file__))
+driver = webdriver.Firefox(executable_path=str(driver_path)+'/geckodriver',
+                           service_log_path=str(driver_path)+'/driver.log',
                            options=opts)
-# domen hided cause of confidential
+# domen name should be configured in hosts file
 driver.get('http://astp/maximo/')
-# login and password of IBM WebSphere taskmanager hided in connectconf
+# login and password of IBM WebSphere task manager hide in connection_configure.py
 s_username = driver.find_element_by_name("username")
 s_password = driver.find_element_by_name('password')
 s_username.send_keys(username)
 s_password.send_keys(password)
-element_dispayed_status = False
-while not element_dispayed_status:
+element_display_status = False
+while not element_display_status:
     try:
-        element_dispayed_status = driver.find_element_by_class_name('tiv_btn').is_displayed()
+        element_display_status = driver.find_element_by_class_name('tiv_btn').is_displayed()
     except ImportError:
-        element_dispayed_status = False
+        element_display_status = False
 driver.find_element_by_class_name('tiv_btn').click()
 
 
@@ -38,22 +41,22 @@ def enter_to_work_order():
     path_to_work_order = 'http://astp/maximo/ui/login?event=loadapp&value=wotrack&additionalevent'
     path_to_work_order += '=useqbe&additionaleventvalue=wonum=' + work_order_number + '&forcereload=true'
     driver.get(path_to_work_order)
-    element_dispayed_status1 = False
-    while not element_dispayed_status1:
+    element_display_status1 = False
+    while not element_display_status1:
         try:
-            element_dispayed_status1 = driver.find_element_by_id('m3b854f9f-sc_div').is_displayed()
+            element_display_status1 = driver.find_element_by_id('m3b854f9f-sc_div').is_displayed()
         except ImportError:
-            element_dispayed_status1 = False
+            element_display_status1 = False
     # making work order
 
     time.sleep(1)
     driver.find_element_by_id('m3b854f9f-sc_div').click()
-    element_dispayed_status2 = False
-    while not element_dispayed_status2:
+    element_display_status2 = False
+    while not element_display_status2:
         try:
-            element_dispayed_status2 = driver.find_element_by_id('ma7efa7a3-tb').is_displayed()
+            element_display_status2 = driver.find_element_by_id('ma7efa7a3-tb').is_displayed()
         except ImportError:
-            element_dispayed_status2 = False
+            element_display_status2 = False
     # click to entry of js window
     time.sleep(1)
     driver.find_element_by_id('ma7efa7a3-tb').click()
@@ -63,14 +66,17 @@ def enter_to_work_order():
 
 
 def closing_work_order():
-    element_dispayed_status3 = False
-    while not element_dispayed_status3:
+    element_display_status3 = False
+    while not element_display_status3:
         try:
-            element_dispayed_status3 = driver.find_element_by_id('m15f1c9f0-pb').is_displayed()
+            element_display_status3 = driver.find_element_by_id('m15f1c9f0-pb').is_displayed()
         except ImportError:
-            element_dispayed_status3 = False
+            element_display_status3 = False
     time.sleep(2)
     driver.find_element_by_id('m15f1c9f0-pb').click()
+    scripts_entry.delete('1.0', tk.END)
+    for i in range(35):
+        work_order_entry.delete(0)
 
 
 # complex selects from DB
@@ -78,9 +84,9 @@ def closing_work_order():
 
 def scripts_select_button():
     snils = scripts_entry.get('1.0', '1.11')
-    # imported SQL scripts hided in scripts.py cause of confidential
+    # imported SQL scripts hide in scripts.py cause of confidential
     script = a1 + " " + a2 + " " + a3 + " " + a4 + " " + a5 + " " + a6 + " " + a7 + " " + a8 + " " + a9 + " " + a10
-    script = script + " " + a11 + " " + a12 + " " + a13 + " " + a14 + " " + a15 + " " + a16 + " " + a17 + " " + a18
+    script += " " + a11 + " " + a12 + " " + a13 + " " + a14 + " " + a15 + " " + a16 + " " + a17 + " " + a18
     script = script + " " + a19 + " " + a20 + " " + a21 + " " + a22 + " " + a23 + " " + a24 + " " + a25 + " " + a26
     script = script + " " + a27 + " " + a28
     script = script.replace('123456789', snils)
@@ -95,11 +101,6 @@ def scripts_select_button():
     driver.find_element_by_id('m9e96a86b-tb').send_keys(r'25. \ 25.2. \ 25.2.2.')
     driver.find_element_by_id('m1317c3f5-pb').click()
     closing_work_order()
-    scripts_entry.delete('1.0', tk.END)
-    i = 0
-    while i < 35:
-        work_order_entry.delete(0)
-        i += 1
 
 
 # simple select from DB
@@ -118,11 +119,6 @@ def select_button():
     driver.find_element_by_id('m9e96a86b-tb').send_keys(r'25. \ 25.2. \ 25.2.2.')
     driver.find_element_by_id('m1317c3f5-pb').click()
     closing_work_order()
-    scripts_entry.delete('1.0', tk.END)
-    i = 0
-    while i < 35:
-        work_order_entry.delete(0)
-        i += 1
 
 
 # button for manual select from DB
@@ -141,11 +137,6 @@ def manual_select_button():
     driver.find_element_by_id('m9e96a86b-tb').send_keys(r'25. \ 25.2. \ 25.2.2.')
     driver.find_element_by_id('m1317c3f5-pb').click()
     closing_work_order()
-    scripts_entry.delete('1.0', tk.END)
-    i = 0
-    while i < 35:
-        work_order_entry.delete(0)
-        i += 1
 
 
 # button for update scripts in DB
@@ -164,12 +155,6 @@ def update_button():
     driver.find_element_by_id('m9e96a86b-tb').send_keys(r'25. \ 25.7.')
     driver.find_element_by_id('m1317c3f5-pb').click()
     closing_work_order()
-    scripts_entry.delete('1.0', tk.END)
-    i = 0
-    while i < 35:
-        work_order_entry.delete(0)
-        i += 1
-
 
 # window UI parameters
 
@@ -194,3 +179,4 @@ button_for_manual_select.pack(side=LEFT)
 button_for_update.pack(side=LEFT)
 scripts_entry.pack(side=LEFT)
 window.mainloop()
+
