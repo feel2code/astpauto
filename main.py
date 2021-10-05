@@ -47,6 +47,7 @@ def enter_to_work_order():
         except ImportError:
             element_dispayed_status1 = False
     # making work order
+
     time.sleep(1)
     driver.find_element_by_id('m3b854f9f-sc_div').click()
     element_dispayed_status2 = False
