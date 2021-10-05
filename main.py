@@ -38,7 +38,7 @@ driver.find_element_by_class_name('tiv_btn').click()
 def enter_to_work_order():
     work_order_number = work_order_entry.get()
     path_to_work_order = 'http://astp/maximo/ui/login?event=loadapp&value=wotrack&additionalevent'
-    path_to_work_order += '=useqbe&additionaleventvalue=wonum='+work_order_number+'&forcereload=true'
+    path_to_work_order += '=useqbe&additionaleventvalue=wonum=' + work_order_number + '&forcereload=true'
     driver.get(path_to_work_order)
     element_dispayed_status1 = False
     while not element_dispayed_status1:
@@ -59,6 +59,8 @@ def enter_to_work_order():
     # click to entry of js window
     time.sleep(1)
     driver.find_element_by_id('ma7efa7a3-tb').click()
+
+
 # closing work order after making changes
 
 
@@ -71,6 +73,8 @@ def closing_work_order():
             element_dispayed_status3 = False
     time.sleep(2)
     driver.find_element_by_id('m15f1c9f0-pb').click()
+
+
 # complex selects from DB
 
 
@@ -98,6 +102,8 @@ def scripts_select_button():
     while i < 35:
         work_order_entry.delete(0)
         i += 1
+
+
 # simple select from DB
 
 
@@ -119,6 +125,8 @@ def select_button():
     while i < 35:
         work_order_entry.delete(0)
         i += 1
+
+
 # button for manual select from DB
 
 
@@ -140,6 +148,8 @@ def manual_select_button():
     while i < 35:
         work_order_entry.delete(0)
         i += 1
+
+
 # button for update scripts in DB
 
 
@@ -161,6 +171,8 @@ def update_button():
     while i < 35:
         work_order_entry.delete(0)
         i += 1
+
+
 # window UI parameters
 
 
