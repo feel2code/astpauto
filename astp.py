@@ -67,6 +67,7 @@ def enter_to_work_order():
 
 
 def closing_work_order():
+    time.sleep(66)
     element_display_status3 = False
     while not element_display_status3:
         try:
