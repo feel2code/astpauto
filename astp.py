@@ -12,6 +12,7 @@ from connection_configure import *
 from scripts import *
 import os
 
+
 opts = Options()
 # opts.headless = True  # open browser in background
 # enter to task manager
