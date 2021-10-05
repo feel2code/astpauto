@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Приложение разработано для внутреннего оперативного создания тасок в интерфейсе таскменеджера IBM WebSphere
-# App coded for inside use in taskmanager IBM WebSphere to make work orders easier
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.firefox.options import Options
