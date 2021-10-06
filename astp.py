@@ -13,6 +13,7 @@ from scripts import *
 import os
 from pathorder import *
 
+new_path = path_to_work_order
 opts = Options()
 opts.headless = True
 # enter to task manager
