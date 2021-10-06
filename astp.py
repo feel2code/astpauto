@@ -180,4 +180,3 @@ button_for_manual_select.pack(side=LEFT)
 button_for_update.pack(side=LEFT)
 scripts_entry.pack(side=LEFT)
 window.mainloop()
-
