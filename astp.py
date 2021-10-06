@@ -11,16 +11,14 @@ import time
 from connection_configure import *
 from scripts import *
 import os
-from pathorder import *
 
-new_path = path_to_work_order
 opts = Options()
-opts.headless = True
+# opts.headless = True
 # enter to task manager
 
 driver_path = os.path.dirname(os.path.abspath(__file__))
-driver = webdriver.Firefox(executable_path=str(driver_path)+'/geckodriver',
-                           service_log_path=str(driver_path)+'/driver.log',
+driver = webdriver.Firefox(executable_path=str(driver_path)+'/machine',
+                           service_log_path=None,
                            options=opts)
 driver.get('http://astp/maximo/')
 # login and password of IBM WebSphere task manager hide in connection_configure.py
@@ -30,36 +28,27 @@ s_username.send_keys(username)
 s_password.send_keys(password)
 element_display_status = False
 while not element_display_status:
-    try:
-        element_display_status = driver.find_element_by_class_name('tiv_btn').is_displayed()
-    except ImportError:
-        element_display_status = False
+    element_display_status = driver.find_element_by_class_name('tiv_btn').is_displayed()
+time.sleep(2)
 driver.find_element_by_class_name('tiv_btn').click()
 
 
 def enter_to_work_order():
     work_order_number = work_order_entry.get()
-    global path_to_work_order
+    path_to_work_order = 'http://astp/maximo/ui/login?event=loadapp&value=wotrack&additionalevent'
     path_to_work_order += '=useqbe&additionaleventvalue=wonum=' + work_order_number + '&forcereload=true'
     driver.get(path_to_work_order)
     element_display_status1 = False
     while not element_display_status1:
-        try:
-            element_display_status1 = driver.find_element_by_id('m3b854f9f-sc_div').is_displayed()
-        except ImportError:
-            element_display_status1 = False
+        element_display_status1 = driver.find_element_by_id('m3b854f9f-sc_div').is_displayed()
     # making work order
-
-    time.sleep(1)
+    time.sleep(2)
     driver.find_element_by_id('m3b854f9f-sc_div').click()
     element_display_status2 = False
     while not element_display_status2:
-        try:
-            element_display_status2 = driver.find_element_by_id('ma7efa7a3-tb').is_displayed()
-        except ImportError:
-            element_display_status2 = False
+        element_display_status2 = driver.find_element_by_id('ma7efa7a3-tb').is_displayed()
     # click to entry of js window
-    time.sleep(1)
+    time.sleep(2)
     driver.find_element_by_id('ma7efa7a3-tb').click()
 
 
@@ -67,13 +56,9 @@ def enter_to_work_order():
 
 
 def closing_work_order():
-    time.sleep(66)
     element_display_status3 = False
     while not element_display_status3:
-        try:
-            element_display_status3 = driver.find_element_by_id('m15f1c9f0-pb').is_displayed()
-        except ImportError:
-            element_display_status3 = False
+        element_display_status3 = driver.find_element_by_id('m15f1c9f0-pb').is_displayed()
     time.sleep(2)
     driver.find_element_by_id('m15f1c9f0-pb').click()
     scripts_entry.delete('1.0', tk.END)
@@ -89,8 +74,8 @@ def scripts_select_button():
     # imported SQL scripts hide in scripts.py cause of confidential
     script = a1 + " " + a2 + " " + a3 + " " + a4 + " " + a5 + " " + a6 + " " + a7 + " " + a8 + " " + a9 + " " + a10
     script += " " + a11 + " " + a12 + " " + a13 + " " + a14 + " " + a15 + " " + a16 + " " + a17 + " " + a18
-    script = script + " " + a19 + " " + a20 + " " + a21 + " " + a22 + " " + a23 + " " + a24 + " " + a25 + " " + a26
-    script = script + " " + a27 + " " + a28
+    script += " " + a19 + " " + a20 + " " + a21 + " " + a22 + " " + a23 + " " + a24 + " " + a25 + " " + a26
+    script += " " + a27 + " " + a28
     script = script.replace('123456789', snils)
     pyperclip.copy(script)
     enter_to_work_order()
