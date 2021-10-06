@@ -14,7 +14,7 @@ import os
 
 
 opts = Options()
-# opts.headless = True  # open browser in background
+opts.headless = True
 # enter to task manager
 
 driver_path = os.path.dirname(os.path.abspath(__file__))
