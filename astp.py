@@ -11,7 +11,7 @@ import time
 from connection_configure import *
 from scripts import *
 import os
-
+from pathorder import *
 
 opts = Options()
 opts.headless = True
@@ -38,7 +38,7 @@ driver.find_element_by_class_name('tiv_btn').click()
 
 def enter_to_work_order():
     work_order_number = work_order_entry.get()
-    path_to_work_order = 'http://astp/maximo/ui/login?event=loadapp&value=wotrack&additionalevent'
+    global path_to_work_order
     path_to_work_order += '=useqbe&additionaleventvalue=wonum=' + work_order_number + '&forcereload=true'
     driver.get(path_to_work_order)
     element_display_status1 = False
