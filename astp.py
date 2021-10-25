@@ -16,6 +16,7 @@ opts = Options()
 # opts.headless = True
 # enter to task manager
 
+
 driver_path = os.path.dirname(os.path.abspath(__file__))
 driver = webdriver.Firefox(executable_path=str(driver_path)+'/machine',
                            service_log_path=None,
