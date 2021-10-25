@@ -22,7 +22,7 @@ driver = webdriver.Firefox(executable_path=str(driver_path)+'/machine',
                            options=opts)
 driver.get('http://astp/maximo/')
 # login and password of IBM WebSphere task manager hide in connection_configure.py
-s_username = driver.find_element_by_name("username")
+s_username = driver.find_element_by_name('username')
 s_password = driver.find_element_by_name('password')
 s_username.send_keys(username)
 s_password.send_keys(password)
@@ -31,6 +31,16 @@ while not element_display_status:
     element_display_status = driver.find_element_by_class_name('tiv_btn').is_displayed()
 time.sleep(2)
 driver.find_element_by_class_name('tiv_btn').click()
+
+
+def click_button(button):
+    while True:
+        try:
+            driver.find_element_by_id(button).click()
+        except:
+            time.sleep(3)
+        else:
+            break
 
 
 def enter_to_work_order():
@@ -43,13 +53,13 @@ def enter_to_work_order():
         element_display_status1 = driver.find_element_by_id('m3b854f9f-sc_div').is_displayed()
     # making work order
     time.sleep(2)
-    driver.find_element_by_id('m3b854f9f-sc_div').click()
+    click_button('m3b854f9f-sc_div')
     element_display_status2 = False
     while not element_display_status2:
         element_display_status2 = driver.find_element_by_id('ma7efa7a3-tb').is_displayed()
     # click to entry of js window
     time.sleep(2)
-    driver.find_element_by_id('ma7efa7a3-tb').click()
+    click_button('ma7efa7a3-tb')
 
 
 # closing work order after making changes
@@ -60,7 +70,7 @@ def closing_work_order():
     while not element_display_status3:
         element_display_status3 = driver.find_element_by_id('m15f1c9f0-pb').is_displayed()
     time.sleep(2)
-    driver.find_element_by_id('m15f1c9f0-pb').click()
+    click_button('m15f1c9f0-pb')
     scripts_entry.delete('1.0', tk.END)
     for i in range(35):
         work_order_entry.delete(0)
@@ -80,13 +90,13 @@ def scripts_select_button():
     pyperclip.copy(script)
     enter_to_work_order()
     driver.find_element_by_id('ma7efa7a3-tb').send_keys('Выполнить селект')
-    driver.find_element_by_id('m6bda82c1-ta').click()
+    click_button('m6bda82c1-ta')
     driver.find_element_by_id('m6bda82c1-ta').send_keys(Keys.COMMAND + "a")
     driver.find_element_by_id('m6bda82c1-ta').send_keys(Keys.BACKSPACE)
     driver.find_element_by_id('m6bda82c1-ta').send_keys(Keys.COMMAND + "v")
-    driver.find_element_by_id('m9e96a86b-tb').click()
+    click_button('m9e96a86b-tb')
     driver.find_element_by_id('m9e96a86b-tb').send_keys(r'25. \ 25.2. \ 25.2.2.')
-    driver.find_element_by_id('m1317c3f5-pb').click()
+    click_button('m1317c3f5-pb')
     closing_work_order()
 
 
@@ -98,13 +108,13 @@ def select_button():
     pyperclip.copy(script)
     enter_to_work_order()
     driver.find_element_by_id('ma7efa7a3-tb').send_keys('Приложить выборку')
-    driver.find_element_by_id('m6bda82c1-ta').click()
+    click_button('m6bda82c1-ta')
     driver.find_element_by_id('m6bda82c1-ta').send_keys(Keys.COMMAND + "a")
     driver.find_element_by_id('m6bda82c1-ta').send_keys(Keys.BACKSPACE)
     driver.find_element_by_id('m6bda82c1-ta').send_keys(Keys.COMMAND + "v")
-    driver.find_element_by_id('m9e96a86b-tb').click()
+    click_button('m9e96a86b-tb')
     driver.find_element_by_id('m9e96a86b-tb').send_keys(r'25. \ 25.2. \ 25.2.2.')
-    driver.find_element_by_id('m1317c3f5-pb').click()
+    click_button('m1317c3f5-pb')
     closing_work_order()
 
 
@@ -116,13 +126,13 @@ def manual_select_button():
     pyperclip.copy(script)
     enter_to_work_order()
     driver.find_element_by_id('ma7efa7a3-tb').send_keys('Выполнить селект')
-    driver.find_element_by_id('m6bda82c1-ta').click()
+    click_button('m6bda82c1-ta')
     driver.find_element_by_id('m6bda82c1-ta').send_keys(Keys.COMMAND + "a")
     driver.find_element_by_id('m6bda82c1-ta').send_keys(Keys.BACKSPACE)
     driver.find_element_by_id('m6bda82c1-ta').send_keys(Keys.COMMAND + "v")
-    driver.find_element_by_id('m9e96a86b-tb').click()
+    click_button('m9e96a86b-tb')
     driver.find_element_by_id('m9e96a86b-tb').send_keys(r'25. \ 25.2. \ 25.2.2.')
-    driver.find_element_by_id('m1317c3f5-pb').click()
+    click_button('m1317c3f5-pb')
     closing_work_order()
 
 
@@ -134,13 +144,13 @@ def update_button():
     pyperclip.copy(script)
     enter_to_work_order()
     driver.find_element_by_id('ma7efa7a3-tb').send_keys('Просьба согласовать выполнение скриптов')
-    driver.find_element_by_id('m6bda82c1-ta').click()
+    click_button('m6bda82c1-ta')
     driver.find_element_by_id('m6bda82c1-ta').send_keys(Keys.COMMAND + "a")
     driver.find_element_by_id('m6bda82c1-ta').send_keys(Keys.BACKSPACE)
     driver.find_element_by_id('m6bda82c1-ta').send_keys(Keys.COMMAND + "v")
-    driver.find_element_by_id('m9e96a86b-tb').click()
+    click_button('m9e96a86b-tb')
     driver.find_element_by_id('m9e96a86b-tb').send_keys(r'25. \ 25.7.')
-    driver.find_element_by_id('m1317c3f5-pb').click()
+    click_button('m1317c3f5-pb')
     closing_work_order()
 
 # window UI parameters
