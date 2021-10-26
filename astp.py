@@ -13,7 +13,7 @@ from scripts import *
 import os
 
 opts = Options()
-# opts.headless = True
+opts.headless = True
 # enter to task manager
 
 
@@ -72,8 +72,12 @@ def enter_to_work_order():
 def closing_work_order():
     element_display_status3 = False
     while not element_display_status3:
-        element_display_status3 = driver.find_element_by_id('m15f1c9f0-pb').is_displayed()
-    time.sleep(2)
+        try:
+            element_display_status3 = driver.find_element_by_id('m15f1c9f0-pb').is_displayed()
+        except:
+            time.sleep(2)
+        else:
+            break
     click_button('m15f1c9f0-pb')
     scripts_entry.delete('1.0', tk.END)
     for i in range(35):
