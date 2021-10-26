@@ -30,8 +30,13 @@ s_password.send_keys(password)
 element_display_status = False
 while not element_display_status:
     element_display_status = driver.find_element_by_class_name('tiv_btn').is_displayed()
-time.sleep(2)
-driver.find_element_by_class_name('tiv_btn').click()
+while True:
+    try:
+        driver.find_element_by_class_name('tiv_btn').click()
+    except:
+        time.sleep(1)
+    else:
+        break
 
 
 def click_button(button):
@@ -39,7 +44,7 @@ def click_button(button):
         try:
             driver.find_element_by_id(button).click()
         except:
-            time.sleep(3)
+            time.sleep(1)
         else:
             break
 
@@ -53,13 +58,11 @@ def enter_to_work_order():
     while not element_display_status1:
         element_display_status1 = driver.find_element_by_id('m3b854f9f-sc_div').is_displayed()
     # making work order
-    time.sleep(2)
     click_button('m3b854f9f-sc_div')
     element_display_status2 = False
     while not element_display_status2:
         element_display_status2 = driver.find_element_by_id('ma7efa7a3-tb').is_displayed()
     # click to entry of js window
-    time.sleep(2)
     click_button('ma7efa7a3-tb')
 
 
