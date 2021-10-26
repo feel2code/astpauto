@@ -13,7 +13,7 @@ from scripts import *
 import os
 
 opts = Options()
-opts.headless = True
+# opts.headless = True
 # enter to task manager
 
 
