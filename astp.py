@@ -13,7 +13,7 @@ from scripts import *
 import os
 
 opts = Options()
-opts.headless = True
+# opts.headless = True
 # enter to task manager
 
 
@@ -61,7 +61,12 @@ def enter_to_work_order():
     click_button('m3b854f9f-sc_div')
     element_display_status2 = False
     while not element_display_status2:
-        element_display_status2 = driver.find_element_by_id('ma7efa7a3-tb').is_displayed()
+        try:
+            element_display_status2 = driver.find_element_by_id('ma7efa7a3-tb').is_displayed()
+        except:
+            time.sleep(1)
+        else:
+            break
     # click to entry of js window
     click_button('ma7efa7a3-tb')
 
