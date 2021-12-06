@@ -12,15 +12,12 @@ from connection_configure import *
 from scripts import *
 import os
 
-opts = Options()
-opts.headless = True
+
 # enter to task manager
 
-
+opts = Options()
 driver_path = os.path.dirname(os.path.abspath(__file__))
-driver = webdriver.Firefox(executable_path=str(driver_path)+'/machine',
-                           service_log_path=None,
-                           options=opts)
+driver = webdriver.Firefox(executable_path = driver_path + '/machine', service_log_path = None , options = opts)
 driver.get('http://astp/maximo/')
 # login and password of IBM WebSphere task manager hide in connection_configure.py
 s_username = driver.find_element_by_name('username')
