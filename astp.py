@@ -106,7 +106,7 @@ def scripts_select_button():
     driver.find_element_by_id('m6bda82c1-ta').send_keys(Keys.COMMAND + "v")
     click_button('m9e96a86b-tb')
     driver.find_element_by_id('m9e96a86b-tb').send_keys(r'25. \ 25.2. \ 25.2.2.')
-    time.sleep(1)
+    time.sleep(3)
     driver.find_element_by_id('m9e96a86b-tb').send_keys(Keys.ENTER)
     # click_button('m1317c3f5-pb') old scheme to creation work order
     closing_work_order()
@@ -126,7 +126,7 @@ def select_button():
     driver.find_element_by_id('m6bda82c1-ta').send_keys(Keys.COMMAND + "v")
     click_button('m9e96a86b-tb')
     driver.find_element_by_id('m9e96a86b-tb').send_keys(r'25. \ 25.2. \ 25.2.2.')
-    time.sleep(1)
+    time.sleep(3)
     driver.find_element_by_id('m9e96a86b-tb').send_keys(Keys.ENTER)
     # click_button('m1317c3f5-pb') old scheme to creation work order
     closing_work_order()
@@ -146,7 +146,7 @@ def manual_select_button():
     driver.find_element_by_id('m6bda82c1-ta').send_keys(Keys.COMMAND + "v")
     click_button('m9e96a86b-tb')
     driver.find_element_by_id('m9e96a86b-tb').send_keys(r'25. \ 25.2. \ 25.2.2.')
-    time.sleep(1)
+    time.sleep(3)
     driver.find_element_by_id('m9e96a86b-tb').send_keys(Keys.ENTER)
     # click_button('m1317c3f5-pb') old scheme to creation work order
     closing_work_order()
@@ -166,7 +166,7 @@ def update_button():
     driver.find_element_by_id('m6bda82c1-ta').send_keys(Keys.COMMAND + "v")
     click_button('m9e96a86b-tb')
     driver.find_element_by_id('m9e96a86b-tb').send_keys(r'25. \ 25.7.')
-    time.sleep(1)
+    time.sleep(3)
     driver.find_element_by_id('m9e96a86b-tb').send_keys(Keys.ENTER)
     # click_button('m1317c3f5-pb')  old scheme to creation work order
     closing_work_order()
