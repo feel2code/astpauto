@@ -1,4 +1,4 @@
 /connection_configure.py
 /scripts.py
-venv/
 __pycache__/
+.venv/
