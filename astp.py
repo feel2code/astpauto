@@ -92,10 +92,12 @@ def closing_work_order():
 def scripts_select_button():
     snils = scripts_entry.get('1.0', '1.11')
     # imported SQL scripts hide in scripts.py cause of confidential
-    script = a1 + " " + a2 + " " + a3 + " " + a4 + " " + a5 + " " + a6 + " " + a7 + " " + a8 + " " + a9 + " " + a10
-    script += " " + a11 + " " + a12 + " " + a13 + " " + a14 + " " + a15 + " " + a16 + " " + a17 + " " + a18
-    script += " " + a19 + " " + a20 + " " + a21 + " " + a22 + " " + a23 + " " + a24 + " " + a25 + " " + a26
-    script += " " + a27 + " " + a28 + " " + a29
+    full_script_aliases = []
+    for i in range(1,30):
+        full_script_aliases.append(f'a{i}')
+        if i != 29:
+            full_script_aliases.append('" "')
+    script = '+'.join(full_script_aliases)
     script = script.replace('123456789', snils)
     pyperclip.copy(script)
     enter_to_work_order()
