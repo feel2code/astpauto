@@ -13,6 +13,7 @@ import os
 # enter to task manager
 opts = Options()
 driver_path = os.path.dirname(os.path.abspath(__file__))
+
 driver = webdriver.Firefox(
     executable_path=driver_path + '/machine',
     service_log_path=None,
@@ -25,6 +26,7 @@ s_username = driver.find_element_by_name('username')
 s_password = driver.find_element_by_name('password')
 s_username.send_keys(username)
 s_password.send_keys(password)
+
 element_display_status = False
 while not element_display_status:
     element_display_status = (
@@ -40,6 +42,7 @@ while True:
 
 
 def click_button(button):
+    """Click on the button."""
     while True:
         try:
             driver.find_element_by_id(button).click()
@@ -50,6 +53,7 @@ def click_button(button):
 
 
 def enter_to_work_order():
+    """Entering to work order."""
     work_order_number = work_order_entry.get()
     path_to_work_order = (
         'http://astp/maximo/ui/login?event='
@@ -58,11 +62,13 @@ def enter_to_work_order():
         + work_order_number + '&forcereload=true'
     )
     driver.get(path_to_work_order)
+    
     element_display_status1 = False
     while not element_display_status1:
         element_display_status1 = (
             driver.find_element_by_id('m3b854f9f-sc_div').is_displayed()
         )
+    
     # making work order
     click_button('m3b854f9f-sc_div')
     element_display_status2 = False
@@ -79,10 +85,8 @@ def enter_to_work_order():
     click_button('ma7efa7a3-tb')
 
 
-# closing work order after making changes
-
-
 def closing_work_order():
+    """Closing work order after making changes."""
     element_display_status3 = False
     while not element_display_status3:
         try:
@@ -99,12 +103,10 @@ def closing_work_order():
         work_order_entry.delete(0)
 
 
-# complex selects from DB
-
-
 def scripts_select_button():
+    """Many selects scripts to work order."""
     snils = scripts_entry.get('1.0', '1.11')
-    # imported SQL scripts hide in scripts.py cause of confidential
+    # imported SQL scripts hid in scripts.py cause of confidential
     script = script_all_tables.replace('123456789', snils)
     pyperclip.copy(script)
     enter_to_work_order()
@@ -125,10 +127,8 @@ def scripts_select_button():
     closing_work_order()
 
 
-# simple select from DB
-
-
 def select_button():
+    """Any select script by SNILS."""
     script = scripts_entry.get('1.0', tk.END)
     pyperclip.copy(script)
     enter_to_work_order()
@@ -149,10 +149,8 @@ def select_button():
     closing_work_order()
 
 
-# button for manual select from DB
-
-
 def manual_select_button():
+    """Button for manual select from DB."""
     script = scripts_entry.get('1.0', tk.END)
     pyperclip.copy(script)
     enter_to_work_order()
@@ -163,9 +161,9 @@ def manual_select_button():
     driver.find_element_by_id('m6bda82c1-ta').send_keys(Keys.COMMAND + "v")
     click_button('m9e96a86b-tb')
     driver.find_element_by_id(
-        'm9e96a86b-tb'
+            'm9e96a86b-tb'
         ).send_keys(
-        r'25. \ 25.2. \ 25.2.2.'
+            r'25. \ 25.2. \ 25.2.2.'
         )
     time.sleep(3)
     driver.find_element_by_id('m9e96a86b-tb').send_keys(Keys.ENTER)
@@ -173,25 +171,48 @@ def manual_select_button():
     closing_work_order()
 
 
-# button for update scripts in DB
 def update_button():
+    """Button for update scripts in DB."""
     script = scripts_entry.get('1.0', tk.END)
     pyperclip.copy(script)
     enter_to_work_order()
+    
     driver.find_element_by_id(
         'ma7efa7a3-tb'
-        ).send_keys(
-            'Просьба согласовать выполнение скриптов'
-        )
-    click_button('m6bda82c1-ta')
-    driver.find_element_by_id('m6bda82c1-ta').send_keys(Keys.COMMAND + "a")
-    driver.find_element_by_id('m6bda82c1-ta').send_keys(Keys.BACKSPACE)
-    driver.find_element_by_id('m6bda82c1-ta').send_keys(Keys.COMMAND + "v")
+    ).send_keys(
+        'Просьба согласовать выполнение скриптов'
+    )
+    click_button(
+        'm6bda82c1-ta'
+    )
+    driver.find_element_by_id(
+        'm6bda82c1-ta'
+    ).send_keys(
+        Keys.COMMAND + "a"
+    )
+    driver.find_element_by_id(
+        'm6bda82c1-ta'
+    ).send_keys(
+        Keys.BACKSPACE
+    )
+    driver.find_element_by_id(
+        'm6bda82c1-ta'
+    ).send_keys(
+        Keys.COMMAND + "v"
+    )
     click_button('m9e96a86b-tb')
-    driver.find_element_by_id('m9e96a86b-tb').send_keys(r'25. \ 25.7.')
+    driver.find_element_by_id(
+        'm9e96a86b-tb'
+    ).send_keys(
+        r'25. \ 25.7.'
+    )
+    
     time.sleep(3)
-    driver.find_element_by_id('m9e96a86b-tb').send_keys(Keys.ENTER)
-    # click_button('m1317c3f5-pb')  old scheme to creation work order
+    driver.find_element_by_id(
+        'm9e96a86b-tb'
+    ).send_keys(
+        Keys.ENTER
+    )
     closing_work_order()
 
 
