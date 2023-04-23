@@ -31,7 +31,7 @@ python3 astp.py
 * Notice, that you need to place your credentials to the `.env` file
 * For Windows OS please replace webdriver bin file
 * For Linux/Windows OS please replace `Keys.COMMAND` in code to `Keys.CONTROL`
-
+<br>
 
 * Помните, что вам нужно поместить свои учетные данные в файл `.env`
 * Для ОС Windows замените bin-файл веб-драйвера
