@@ -1,4 +1,4 @@
-<h1>ASTP automated job helper</h1>
+<h1 align="center">📋ASTP automated job helper📋</h1>
 
 ![ASTP auto Logo](https://repository-images.githubusercontent.com/406730510/e771f4a0-93db-48fa-987b-17858398f1b3)
 
